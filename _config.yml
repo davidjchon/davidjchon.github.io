@@ -3,3 +3,17 @@ markdown: redcarpet
 redcarpet:
   extensions: ["tables", "autolink", "strikethrough", "lax_spacing", "superscript", "underline"]
 pygments: true
+
+title: "David J Chon"
+tagline: "A New Start, A New Beginning"
+description: ""
+keywords: ""
+url: http://davidjchon.github.io
+
+author:
+  name: "David J Chon"
+  email: dchond@gmail.com
+  url: http://davidjchon.github.io
+
+github:
+  repo: ""
