@@ -65,7 +65,7 @@
 
   .sidebar {
     transition: 1s;
-    margin-left: -50%;
+    margin-left: -100%;
     z-index: 3;
     width: 35%;
     padding-left: 1.75em;
