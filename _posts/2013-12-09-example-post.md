@@ -6,7 +6,7 @@ date:   2013-12-09 12:00:00
 categories: posts
 ---
 
-{{site.time | date: '%y' }}
+{{site.time | date: '%y'-'%m'-'%d' }}
 
 ## Introducing Flex, a Jekyll theme
 
