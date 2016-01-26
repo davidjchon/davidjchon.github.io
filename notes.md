@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: Notes
 description: Collective of Notes.
 keywords: blog, archive, notes
