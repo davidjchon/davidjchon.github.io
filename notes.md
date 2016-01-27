@@ -5,7 +5,7 @@ description: Collective of Notes.
 keywords: blog, archive, notes
 ---
 
-<div class="post notes">
+<!-- <div class="post notes">
 	{% for post in site.posts %}
 		<div class="post-list">
 			<div class="post-list-date"><small>{{ post.date | date: "%b %d, %Y" }}</small></div>
@@ -13,7 +13,7 @@ keywords: blog, archive, notes
 			<div class="post-list-desc">{{ post.description }}</div>
 		</div>
 	{% endfor %}
-</div>
+</div> -->
 <div class="posts">
 	<ul class="posts-list">
 		{% for post in site.posts %}
