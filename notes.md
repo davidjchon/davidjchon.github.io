@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Notes
+title: Note
 description: Collective of Notes.
 keywords: blog, archive, notes
 ---
@@ -14,15 +14,3 @@ keywords: blog, archive, notes
 		</div>
 	{% endfor %}
 </div>
-<!-- <div class="posts">
-	<ul class="posts-list">
-		{% for post in site.posts %}
-            <li class="post-link">
-                <a class="post-title" href="{{ post.url }}">
-                	<span class="post-date">{{ post.date | date_to_string }}</span>
-                  	{{ post.title }}
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
-</div> -->
