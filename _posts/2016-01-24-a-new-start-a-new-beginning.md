@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: A New Start, A New Beginning
 cover: cover.jpg
 date:   2016-01-24
