@@ -1,5 +1,4 @@
 name: David J Chon
-markdown: redcarpet
 redcarpet:
   extensions: ["tables", "autolink", "strikethrough", "lax_spacing", "superscript", "underline"]
 pygments: true
