@@ -17,7 +17,7 @@ keywords: blog, archive, notes
 <ul>
 	{% for post in site.posts %}
 	<li>
-		<a href="{{post.url}}">{{post.title}}</a>
+		<span> href="{{post.url}}">{{post.title}}</span>
 	</li>
 	{% endfor %}
 </ul>
