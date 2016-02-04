@@ -7,7 +7,9 @@ categories: posts
 ---
 
 {{site.time | date: "%B %-d, %Y"}}
+
 {{site.time}}
+
 ## Introducing Flex, a Jekyll theme
 
 Flex is a minimalist, responsive theme based on the website, [The Development](http://thedevelopment.co).
