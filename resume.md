@@ -1,7 +1,6 @@
 ---
 title: David Chon's Resume Online
 ---
-<!DOCTYPE html>
 
 <html>
 
