@@ -3,7 +3,20 @@ layout: default
 title: Home
 ---
 
-{% assign page = site.posts.first %}
+<!-- {% assign page = site.posts.first %}
 {% assign content = page.content %}
-<!-- {% include post.html %}
+{% include post.html %}
  -->
+ <div class="posts">
+ 	<h2>My Recent Notes</h2>
+ 	{% for post in site.posts limit:5%}
+ 		<div class="post-list">
+ 			<div class="post-list-date"><small>{{ post.date | date: "%b %d, %Y" }}</small></div>
+ 			<div class="text-truncate"><a href="{{ post.url }}">{{ Post.title }}</a></div>
+ 			<div class="post-list-desc">{{ post.description }}</div>div>
+		</div>
+	{% endfor %}
+	<a class="more-notes" href="/notes.html">more notes</a>
+</div>
+
+<div class="hrline"></div>
