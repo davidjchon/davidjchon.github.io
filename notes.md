@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Notes
 cover: cover.jpg
 description: Collective of Notes.
