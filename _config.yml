@@ -33,7 +33,7 @@ menu:
       - title: 'Sample Post'
         url: '/intro/sample-post/'
   - title: 'Resume'
-    url: '/David Chon Resume'
+    url: '/David Chon Resume.pdf'
 
 # Owner/author information
 owner:
