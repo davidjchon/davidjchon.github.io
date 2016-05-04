@@ -34,6 +34,8 @@ menu:
         url: '/intro/code-highlighting-post/'
       - title: 'Sample Post'
         url: '/intro/sample-post/'
+  - title: 'Resume'
+    url: '/David Chon Resume.pdf'
 
 # Owner/author information
 owner:
