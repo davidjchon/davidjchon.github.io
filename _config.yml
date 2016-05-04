@@ -18,8 +18,6 @@ url: http://davidjchon.github.io
 menu:
   - title: 'Home'
     url: '/'
-  - title: 'Install'
-    url: '/theme-setup/'
   - title: 'Tags'
     url: '/tags'
   - title: 'Categories'
@@ -32,8 +30,10 @@ menu:
         url: '/intro/code-highlighting-post/'
       - title: 'Sample Post'
         url: '/intro/sample-post/'
-  - title: 'Resume'
+  - title: 'Download'
     url: '/David Chon Resume.pdf'
+  - title: 'Resume'
+    url: '/resume.html'
 
 # Owner/author information
 owner:
