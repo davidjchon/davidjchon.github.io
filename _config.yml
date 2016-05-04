@@ -1,18 +1,36 @@
-name: David J Chon
-redcarpet:
-  extensions: ["tables", "autolink", "strikethrough", "lax_spacing", "superscript", "underline"]
-pygments: true
+title: "blog title"
+author: "Blog Author"
+description: "Really cool blog about ... something"
+#subheading: "Really cool blog about ... something"
+more: "read more"
+url: "http://niklabs.me"
+baseurl: "/contrast" # comment out if in root directory
 
-title: "David J Chon"
-tagline: "A New Start, A New Beginning"
-description: ""
-keywords: ""
-url: http://davidjchon.github.io
+comments:
+    disqus: "niklasbuschmann"
+#    isso: "comments.mysite.org"
 
-author:
-  name: "David J Chon"
-  email: dchond@gmail.com
-  url: http://davidjchon.github.io
+style:
+#    body: "whitesmoke"
+    padding: 33%
+    anchor: "#46f"
+    serif-heading: true
+    nav: "#181818"
+#    headline: "#06f"
+    description: "white"
+    article:
+        odd: "#ffffff"
+        even: "#222222"
 
-github:
-  repo: ""
+links:
+  - github: "https://github.com/me/"
+  - twitter: "https://twitter.com/me/"
+  - google-plus: "https://plus.google.com/+me"
+  - reddit: "https://www.reddit.com/user/me/"
+  - youtube: "https://www.youtube.com/user/me"
+  - steam: "http://steamcommunity.com/id/me/"
+
+paginate: 10
+excerpt_separator: "\n\n\n" # excerpt ends after two blank lines
+defaults: [{scope: {path: ""}, values: {layout: "default"}}, {scope: {path: "", type: "posts"}, values: {comments: true}}]
+gems: [jekyll-feed] # include feed plugin (supported by gh-pages)
