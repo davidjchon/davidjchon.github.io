@@ -1,4 +1,4 @@
-title:            Blog Title
+title:            David Chon
 description:      Describe your website here.
 # put your disqus here
 disqus_shortname: 
@@ -37,13 +37,13 @@ menu:
 
 # Owner/author information
 owner:
-  name:           Your name
+  name:           David Chon
   site:           http://aronbordin.com
   avatar:         images/avatar.jpg
   bio:            "Your bio goes here. It shouldn't be super long but a good two sentences or two should suffice."
-  email:          you@email.com
+  email:          dchond@gmail.com
   # Twitter nick for use in Twitter cards and follow button.
-  twitter: aron_bordin # if no twitter in this config, the twitter follow button will be removed
+  twitter:  # if no twitter in this config, the twitter follow button will be removed
   # GitHub nick for use in follow button in author block.
   github: aron-bordin
 
