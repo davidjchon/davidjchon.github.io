@@ -486,13 +486,13 @@ ul.social-buttons li a:active {
 	position: absolute;
 	bottom: 0;
 	display: table;
-	margin-top: -2cm;
+	margin-top: 0;
 	width: 100%;
 	overflow: hidden;
 	.header-title-wrap {
 		display: table-cell;
 		vertical-align: middle;
-		margin: 0 auto;
+		margin: -2cm;
 		text-align: center;
 	}
 	h2 {
