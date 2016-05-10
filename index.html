@@ -38,7 +38,8 @@ comments: false
     {% if post.content contains "<!-- more -->" %}
       {{ post.content | split:"<!-- more -->" | first % }}
     {% else %}
-      {{ post.content | truncatewords: 25 }}
+      {{ post.content | strip_html | truncatewords: 25 }}
+      <a href="{{ post.url }}">Read More</a>
     {% endif %}
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
