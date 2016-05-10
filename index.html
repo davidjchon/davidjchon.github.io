@@ -39,7 +39,6 @@ comments: false
       {{ post.content | split:"<!-- more -->" | first % }}
     {% else %}
       {{ post.content | truncatewords: 50 }}
-      <br><a href="{{ site.url }}{{ post.url }}">Read More</a>
     {% endif %}
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
