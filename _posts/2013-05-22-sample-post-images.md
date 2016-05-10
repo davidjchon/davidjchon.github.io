@@ -40,8 +40,6 @@ And you'll get something that looks like this:
 
 <figure class="half">
 	<a href="http://placehold.it/1200x600.jpg"><img src="http://placehold.it/600x300.jpg" alt=""></a>
-	<a href="http://placehold.it/1200x600.jpg"><img src="http://placehold.it/600x300.jpg" alt=""></a>
-	<img src="http://placehold.it/600x300.jpg" alt="">
 	<img src="http://placehold.it/600x300.jpg" alt="">
 	<figcaption>Two images.</figcaption>
 </figure>
