@@ -2,9 +2,36 @@
 layout: post
 title: "ME 174- Machine Design Project: Straw Truss Bridge"
 description: "Machine Design Project: Straw Truss Bridge"
+modified: 2016-03-19
 tags: [mechanical engineering, project]
 categories: [mechanical engineering]
 image:
   background: triangular.png
 ---
 
+#### Objectives
+Design and construct a truss bridge within consraints outlined in Specifications.  Requirements for the project:
+<ol>
+	<li>Agreement between predicted & measured failure loads for constructed bridge</li>
+	<li>Measured structural efficiency of the constructed bridge</li>
+</ol>
+
+#### Specifications
+Bridge will be constructed using a total of 25 plastic drinking straws.  Specifications and constraints will be as follows:
+<ol>
+	<li>Design:</li>
+	<ul>
+		<li>12 inch span and 2 inch max width</li>
+		<li>Loading apparatus will provide 1 inch wide abutments on eithe rside of span for bridge to rest upon</li>
+		<li>Must be self-standing and function without attachment to loading apparatus</li>
+		<li>Must accomodate loading at mid-span. Weights will be loaded using 3/16 inch x 2.5 inch, transversely-oriented rod.  Wires attached to rod ends will connect to hanging weight beneath bridge.</li>
+		<li>No portion of the bridge may extend beneath plane defined by upper abutment surfaces.</li>
+		<li>Bridges must be trusses, not simple beams based on bundled straws</li>
+		<li>Straws can be cut to desired length, but may not be slit open to form webbing or gusseting</li>
+	</ul>
+	<li>Construction:</li>
+	<ul>
+		<li>Use of any other materieals is not permitted; nor are pins, tape, gussets, or other means of joining/support</li>
+		<li>Strongly encouraged to reinforce area around mid-span loading point to ensure that local deformation does not compromise bridge load-bearing performance unduly</li>
+	</ul>
+</ol>
