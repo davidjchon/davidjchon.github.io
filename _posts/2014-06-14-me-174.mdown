@@ -1,0 +1,10 @@
+---
+layout: post
+title: "ME 174- Machine Design Project: Straw Truss Bridge"
+description: "Machine Design Project: Straw Truss Bridge"
+tags: [mechanical engineering, project]
+categories: [mechanical engineering]
+image:
+  background: triangular.png
+---
+
