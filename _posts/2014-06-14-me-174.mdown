@@ -10,6 +10,7 @@ image:
 ---
 
 # Objectives
+
 Design and construct a truss bridge within consraints outlined in Specifications.  Requirements for the project:
 1. Agreement between predicted & measured failure loads for constructed bridge
 2. Measured structural efficiency of the constructed bridge
