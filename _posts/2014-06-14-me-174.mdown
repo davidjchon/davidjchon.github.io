@@ -9,16 +9,14 @@ image:
   background: triangular.png
 ---
 
-## Objectives
-
+##Objectives
 Design and construct a truss bridge within consraints outlined in Specifications.  Requirements for the project:
 <ol>
 	<li>Agreement between predicted & measured failure loads for constructed bridge</li>
 	<li>Measured structural efficiency of the constructed bridge</li>
 </ol>
 
-## Specifications
-
+##Specifications
 Bridge will be constructed using a total of 25 plastic drinking straws.  Specifications and constraints will be as follows:
 <ol>
 	<li>Design:</li>
