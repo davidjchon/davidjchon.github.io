@@ -31,6 +31,12 @@
 		float: right;
 	}
 }
+.image-center {
+	float: none;
+	@media #{%medium} {
+		margin: auto;
+	}
+}
 .unstyled-list {
 	list-style: none;
 	margin-left: 0;
