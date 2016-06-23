@@ -33,7 +33,7 @@
 }
 .image-center {
 	float: none;
-	@media #{%medium} {
+	@media #{$medium} {
 		margin: auto;
 	}
 }
