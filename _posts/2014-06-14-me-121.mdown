@@ -7,6 +7,7 @@ tags: [Mechanical Engineering, project]
 categories: [Mechanical Engineering]
 image:
   background: triangular.png
+  feature: 
 ---
 <style>
 hr{
@@ -16,7 +17,7 @@ hr{
 }
 </style>
 
-### Objectives
+###Objectives
 Design a compensator for an active car suspension system using Matlab Linear Systems Toolbox and Simulink.
 
 <!-- more -->
