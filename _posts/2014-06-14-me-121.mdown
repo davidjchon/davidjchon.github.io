@@ -1,0 +1,27 @@
+---
+layout: post
+title: "Feedback Control: Active Car Suspension System"
+description: "ME 121- Feedback Control Project"
+modified: 2016-08-09
+tags: [Mechanical Engineering, project]
+categories: [Mechanical Engineering]
+image:
+  background: triangular.png
+---
+<style>
+hr{
+	border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+</style>
+
+### Objectives
+Design a compensator for an active car suspension system using Matlab Linear Systems Toolbox and Simulink.
+
+<!-- more -->
+
+### Description of the System
+The active suspension control system essentially measures the displacement of the wheel and vehicle position reltive to the "desired" ones, computes how to compensate for this error, and actuates with hydropneumatic or electromagnetic suspensions.  The **active*  element is represented by the circle producing a force F.  **Our overall goal** is to **automatically determine** F to minimize the effects of the disturbance w (rough terrain) on the wheel and chasis displacement.<br/>
+You will design and activate suspension sysstem for a quarter car body and wheel assembly model using frequency domain design techniques.  You will have to ensure passenger comfort by minimizing the amplitude and duration of oscillations in the car response to terrain dissturbances.
+
