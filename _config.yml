@@ -1,5 +1,5 @@
 title:            David Chon
-description:      Describe your website here.
+description:      Turning Dreams into Reality
 # put your disqus here
 disqus_shortname: 
 reading_time:     true # if true, shows the estimated reading time for a post
@@ -40,7 +40,7 @@ owner:
   name:           David Chon
   site:           http://davidjchon.github.io
   avatar:         images/avatar.jpg
-  bio:            "Mechanical Engineer with a passion for turning dreams into reality."
+  bio:            "I am a Mechanical Engineer interested in Design/Manufacturing and Materials/Structures.  I studied at UCR and graduated with a B.S. in Mechanical Engineering. Although I graduated as a Mechanical Engineer, I have some knowledge on many coding languages.  I hope to build strong relationships with those I encounter."
   email:          dchond@gmail.com
   # Twitter nick for use in Twitter cards and follow button.
   twitter:  # if no twitter in this config, the twitter follow button will be removed
