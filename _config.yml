@@ -18,8 +18,8 @@ url: http://davidjchon.github.io
 menu:
   - title: 'Home'
     url: '/'
-  - title: 'Tags'
-    url: '/tags'
+  #- title: 'Tags'
+  #  url: '/tags'
   - title: 'Categories'
     url: '/categories'
     type: 'categories'
