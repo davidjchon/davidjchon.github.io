@@ -3,9 +3,4 @@ layout: post-index
 title: {{ title }}
 permalink:
 description:
-image:
-  feature:
-  credit:
-  creditlink:
-share:
 ---
