@@ -24,12 +24,14 @@
 	@media #{$medium} {
 		float: left;
 	}
+	margin: left;
 }
 .image-right {
 	float: none;
 	@media #{$medium} {
 		float: right;
 	}
+	margin: right;
 }
 .image-center {
 	float: none;
