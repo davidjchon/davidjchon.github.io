@@ -32,8 +32,8 @@ menu:
   #       url: '/intro/sample-post/'
   - title: 'Download'
     url: '/David Chon Resume.pdf'
-  - title: 'Resume'
-    url: '/resume.html'
+  #- title: 'Resume'
+  #  url: '/resume.html'
 
 # Owner/author information
 owner:
