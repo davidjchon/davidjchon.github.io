@@ -9,10 +9,10 @@ image:
 ---
 
 <figure class="half center">
-	<img src="http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_c.jpg" alt=""></a>
+	<img src="http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_c.jpg" alt="">
 </figure>
 
-Welcome! 환영합니다! ようこそ!
+Welcome! 환영합니다! ようこそ!<br/>
 My name is **David J. Chon** and this is my business blog.
 
 I am a Mechanical Engineer with a focus on **Design and Manufacturing** and **Materials and Structures**. I believe that having a well structured and organized plan of action can effeciently produce any product that engineers design.  
