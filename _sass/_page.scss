@@ -402,9 +402,9 @@ ul.social-buttons li a:active {
 	@include clearfix;
 	margin: 2em auto;
 	text-align: center;
-	color: lighten($text-color,20);
+	color: darken($text-color,20);
 	a {
-		color: lighten($text-color,20);
+		color: darken($text-color,20);
 	}
 }
 
