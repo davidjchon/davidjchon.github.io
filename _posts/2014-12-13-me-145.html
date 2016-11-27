@@ -1,0 +1,2400 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="layout" content="post">
+<meta name="categories" content="[Mechanical Engineering]">
+<meta name="description" content="&quot;ME 145- Robotic Planning and Kinematics&quot;">
+<meta name="image" content="">
+<meta name="modified" content="2016-10-07">
+<meta name="tags" content="[Mechanical Engineering, project]">
+<meta name="background" content="Pattern/grey_wash_wall.png">
+<meta name="feature" content="/ME145/robotics_cover2.jpg"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>"Robotic Planning and Kinematics"</title></head><body><article class="markdown-body"><style>
+hr{
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+</style>
+
+<h2 id="1-sensor-based-motion-planning"><a name="user-content-1-sensor-based-motion-planning" href="#1-sensor-based-motion-planning" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. Sensor-Based Motion Planning</h2>
+<p>Motion planning is an important and common problem in robotics. In its simplest form, the motion planning problem is: how to move a robot from a &ldquo;start&rdquo; location to a &ldquo;goal&rdquo; locaion avoiding obstacles.</p>
+<h3 id="robot-assumptions"><a name="user-content-robot-assumptions" href="#robot-assumptions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Robot Assumptions</h3>
+<ul>
+<li>knows the direction towards the goal,</li>
+<li>knows the straight-line distance between itself and the goal,</li>
+<li>does not knwo anything about the obstacles (number, location, shape, etc.)</li>
+<li>has a contact sensor that allows it to locally detect obstacles,</li>
+<li>can move either in a straight line towards the goal or can follow an obstacle boundary (possibly by using its contact sensor), and</li>
+<li>has limited memory in which it can store distances and angles.</li>
+</ul>
+<h3 id="environment-assumptions"><a name="user-content-environment-assumptions" href="#environment-assumptions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Environment Assumptions</h3>
+<ul>
+<li>the workspace is bounded</li>
+<li>there are only a finite number of obstacles</li>
+<li>the start and goal points are in the free workspace</li>
+<li>any straight line drawn in the environment crosses the boundary of each obstacle only a finite number of times. (This assumption is easily satisfied for &ldquo;normal objects&rdquo;.)</li>
+</ul>
+<p><u>Compute Line Through Two Points</u><br/><br />
+<strong>Input:</strong> two distinct points P1 = (x1,y1) and P2 = (x2,y2) on the plane <br/><br />
+<strong>Output:</strong> parameters (a,b,c) defining the line {(x,y) | ax + by + c = 0} that passes through both P1 and P2.<br />
+Normalize the parameters so that a<sup>2</sup> + b<sup>2</sup> = 1.</p>
+<p><cite>Using Matlab</cite></p>
+<p _="%" endhighlihgt="endhighlihgt">{% highlight html %}<br />
+{% raw %}<br />
+function [a,b,c] = line_points(p1,p2)<br />
+A = [p1(1,1) p2(1,1)];<br />
+B = [p1(1,2) p2(1,2)];<br />
+if (p1(1,1) == p2(1,1))<br />
+    a = 1;<br />
+    b = 0;<br />
+    c = -p1(1,1);<br />
+else<br />
+    p = polyfit(A,B,1);<br />
+    slope = p(1,1);<br />
+    intercept = p(1,2);<br />
+    a = slope/sqrt(slope^2 + 1);<br />
+    b = -sqrt(1 - a^2);<br />
+    c = intercept • -b;<br />
+    if c &lt; 10^-10<br />
+        c = 0;<br />
+    end<br />
+end<br />
+disp([&lsquo;ax + by + c = 0&rsquo;])<br />
+end<br />
+{% endraw %}<br /></p>
+<p><u>Compute Distance Point To Line</u><br/><br />
+<strong>Input:</strong> a point q and two distinct points P1 = (x1,y1) and P2 = (X2,Y2) defining a line. <br/><br />
+<strong>Output:</strong> the distance from q to the line defined by P1 and P2.</p>
+<p><cite>Using Matlab</cite></p>
+<p _="%" endhighlight="endhighlight">{% highlight html %}<br />
+{% raw %}<br />
+function [distance] = d_pl(p1,p2,Q)<br />
+%P1,P2,Q are written as [x,y] format<br />
+A = [p1(1,1) p1(1,2) 0];<br />
+B = [p1(1,1) p2(1,2)0];<br />
+Q = [Q(1,1) Q(1,2) 0];<br />
+AB = A - B;<br />
+BQ = Q - B;<br />
+ABBQ = cross(AB,BQ);<br />
+distance = norm(ABBQ)/norm(AB);<br />
+end<br />
+{% endraw %}<br /></p>
+<p><u>Compute Distance Point To Segment</u> <br/><br />
+<strong>Input:</strong> a point q and a segment defined by two distinct points (P1,P2). <br/><br />
+<strong>Output:</strong> the distance from q to the segment with extreme points (P1,P2).</p>
+<p><cite>Using Matlab</cite></p>
+<p _="%" endhighlight="endhighlight">{% highlight html %}<br />
+{% raw %}<br />
+function [distance] = d_ps(p1,p2,Q)<br />
+%P1,P2,Q are written as [x,y] format<br />
+A = [p1(1,1) p1(1,2)];<br />
+B = [p2(1,1) p2(1,2)];<br />
+Q = [Q(1,1) Q(1,2)];<br />
+AB = norm(A - B);<br />
+AQ = norm(A - Q);<br />
+BQ = norm(B - Q);<br />
+if dot(A - B, Q - B) • dot(Q - A, Q - A) &gt;= 0<br />
+    x = [A,1;B,1;Q,1];<br />
+    distance = abs(det(x))/AB;<br />
+else<br />
+    distance = min(AQ,BQ);<br />
+end<br />
+end<br />
+{% endraw %}<br /></p>
+<p><u>Compute Distance Point To Polygon</u> <br/><br />
+<strong>Input:</strong> a polygon P and a point q. <br/><br />
+<strong>Output:</strong> the distance from q to the closest point in P, called the distance from q to the polygon.</p>
+<p><cite>Using Matlab</cite></p>
+<p _="%" endhighlight="endhighlight">{% highlight html %}<br />
+{% raw %}<br />
+function [distance] = d_pp(P,Q)<br />
+%P is written as [x1,y1;x2,y2;&hellip;] format and Q is written as [x,y] format<br />
+n = length(P);<br />
+i = 1;<br />
+d = [];<br />
+while i &lt; n<br />
+    A = [P(i,1) P(i,2)];<br />
+    B = [P(i + 1,1) P(i + 1,2)];<br />
+    Q = [Q(1,1) Q(1,2)];<br />
+    AB = norm(A - B);<br />
+    AQ = norm(A - Q);<br />
+    BQ = norm(B - Q);<br />
+    if dot(A - B, Q - B) • dot(B - A, Q - A) &gt;= 0<br />
+        X = [A,1;B,1;Q,1];<br />
+        x = sym(X);<br />
+        distacne = abs(det(x))/AB;<br />
+    else<br />
+        distance = min(AQ,BQ);<br />
+    end<br />
+    d(1,i) = distance;<br />
+    i = i + 1:<br />
+end<br />
+A = [P(1,1) P(1,2)];<br />
+B = [P(n,1) P(n,2)];<br />
+Q = [Q(1,1) Q(1,2)];<br />
+AB = norm(A - B);<br />
+AQ = norm(A - Q);<br />
+BQ = norm(B - Q);<br />
+if dot(A - B,Q - B) • dot(B - A,Q - A) &gt;= 0<br />
+    X = [A,1;B,1;Q,1];<br />
+    x = sym(X);<br />
+    distance = abs(det(x))/AB;<br />
+else<br />
+    distance = min(AQ,BQ);<br />
+end<br />
+d(1,n) = distance;<br />
+distance = min(d);<br />
+end<br />
+{% endraw %}<br /></p>
+<p><u>Compute tangent Vector To polygon</u> <br/><br />
+<strong>Input:</strong> a polygon P and a point q. <br/><br />
+<strong>Output:</strong> the unit-length vector u tangent at point q to the polygon P in the following sense: (i) if q is closest to a segment of the polygon, then u should be parallel to the segment, (ii) if q is closest to a vertex, then u should be tangent to a circle centered at the vertex that passes through q, and (iii) the tangent should lie in the counter-clockwise direction. </p>
+<p><cite>Using Matlab</cite></p>
+<p _="%" endhighlight="endhighlight">{% highlight html %}<br />
+{% raw %}<br />
+function [u] = v_pp(P,Q)<br />
+n = length(P);<br />
+i = 1;<br />
+d = [];<br />
+%Finding shortest dist from 1-&gt;n<br />
+while i &lt; n<br />
+    A = [P(i,1) P(i,2)];<br />
+    B = [P(i+1,1) P(i+1,2)];<br />
+    Q = [Q(1,1) Q(1,2)];<br />
+    AB = norm(A - B);<br />
+    AQ = norm(A - Q);<br />
+    BQ = norm(B - Q);<br />
+    if dot(A - B, Q - B) • dot(B - A, Q - A) &gt;= 0<br />
+        X = [A,1;B,1;Q,1];<br />
+        x = sym(X);<br />
+        distance - abs(det(x))/AB;<br />
+    else<br />
+        distance = min(AQ,BQ);<br />
+    end<br />
+    d(1,i) = distance;<br />
+    i = i + 1;<br />
+end<br />
+%Find dist from n-&gt;1<br />
+A = [P(1,1) P(1,2)];<br />
+B = [P(n,1) P(n,2)];<br />
+Q = [Q(1,1) Q(1,2)];<br />
+AB = norm(A - B);<br />
+AQ = norm(A - Q);<br />
+BQ = norm(B - Q);<br />
+if dot(A - B,Q - B) • dot(B - A, Q - A) &gt;= 0<br />
+    X = [A,1;B,1;Q,1];<br />
+    x = sym(X);<br />
+    distance = abs(det(x))/AB;<br />
+else<br />
+    distance = min(AQ,BQ);<br />
+end<br />
+d(1,n) = distance;<br />
+distance = min(d);<br />
+f = find(ismember(d,distance), 1);<br />
+if f == n;<br />
+    g = 1;<br />
+else<br />
+    g = f + 1;<br />
+end<br />
+x1 = P(f,1) - Q(1,1);<br />
+y1 = P(f,2) - Q(1,2);<br />
+x2 = P(g,1) - Q(1,1);<br />
+y2 = P(g,2) - Q(1,2);<br />
+c1 = sqrt(x1^2 + y1^2);<br />
+c2 = sqrt(x2^2 + y2^2);<br />
+l1 = sqrt((P(f,1) - P(g,1))^2 + (P(f,2) - P(g,2))^2);<br />
+if distance ~= c1 &amp; distance ~= c2;<br />
+    l2 = sqrt(c2^2 - distance^2);<br />
+    xcenter = l2/l1 • (x1 - x2);<br />
+    ycenter = l2/l1 • (y1 - y2);<br />
+    center = [P(g,1) + xcenter,P(g, 2) + ycenter];<br />
+    x3 = center(1,1) - Q(1,1);<br />
+    y3 = center(1,2) - Q(1,2);<br />
+    u = [y3,-x3];<br />
+    u = u/distance;<br />
+elseif c1 &lt; c2<br />
+    u = [y1,-x1];<br />
+    u = u/distance;<br />
+elseif c2 &lt; c1<br />
+    u = [y2,-x2];<br />
+    u = u/distance;<br />
+end<br />
+%Check if length = 1<br />
+%u(1,1)^2 + u(1,2)^2<br />
+end<br />
+{% endraw %}<br /></p>
+<h3 id="the-bug0-algorithm"><a name="user-content-the-bug0-algorithm" href="#the-bug0-algorithm" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The Bug0 Algorithm</h3>
+<blockquote>
+<blockquote>
+<ol>
+<li><strong>while</strong> not at goal: <br/></li>
+<li>&nbsp;&nbsp;&nbsp;move towards the goal <br/></li>
+<li>&nbsp;&nbsp;&nbsp;<strong>if</strong> hit an obstacle: <br/></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>while</strong> not able to move towards the goal: <br/></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;follow the obstacle&rsquo;s boundary <cite>moving to the left</cite></li>
+</ol>
+</blockquote>
+</blockquote>
+<p>Unfortunately, Bug0 algorithm does not work properly in the sense that there are situations (workspace, obstacles, start and goal positions) for which there exists a solution (a path from start to goal) but the Bug0 algorithm does not find it.</p>
+<h3 id="the-bug1-algorithm"><a name="user-content-the-bug1-algorithm" href="#the-bug1-algorithm" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The Bug1 Algorithm</h3>
+<blockquote>
+<blockquote>
+<ol>
+<li><strong>while</strong> not at goal: <br/></li>
+<li>&nbsp;&nbsp;&nbsp;move towards the goal <br/></li>
+<li>&nbsp;&nbsp;&nbsp;<strong>if</strong> hit an obstacle: <br/></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;circumnavigate it(moving to the left or right is unimportant). While circumnavigating, store in memory the minimum distance from the obstacle boundary to the goal <br/></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;follow the boundary back to the boundary point with minimum distance to the goal</li>
+</ol>
+</blockquote>
+</blockquote>
+<h3 id="flowcharts"><a name="user-content-flowcharts" href="#flowcharts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Flowcharts</h3>
+<ul>
+<li>Circles represent the start and terminating points</li>
+<li>Arrows indicate the flow of control</li>
+<li>Rectangles represent a single command</li>
+<li>Diamonds output 2 paths based on binary question</li>
+</ul>
+<p><u>Sketch a flowchart and implement the BugBase algorithm.</u> <br/><br />
+<strong>The BugBase Algorithm</strong> <br/><br />
+<strong>Input:</strong> Two locations start and goal in W, a list of polygon obstacles obstaclesList, and a length step-size l. <br/><br />
+<strong>Output:</strong> A sequence, denoted path, of points from start to the first obstacle between start and goal (or from start to goal if no obstacle lies between them). Successive points are separated by no more than step-size.</p>
+<blockquote>
+<blockquote>
+<ol>
+<li>current-position = start <br/></li>
+<li>path = [start] <br/></li>
+<li><strong>while</strong> distance(current-position,goal) &gt; step-size: <br/></li>
+<li>&nbsp;&nbsp;&nbsp;find polygon closest to current-position <br/></li>
+<li>&nbsp;&nbsp;&nbsp;<strong>if</strong> distance from current-position to closest polygon &lt; step-size: <br/></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>return</strong> &ldquo;Failure: There is an obstacle lying between the start and goal&rdquo; and path <br/></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;compute new current-position by taking a step of length step-size towards goal <br/></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path = [path,current-position] <br/></li>
+<li>path = [path,goal] <br/></li>
+<li><strong>return</strong> &ldquo;Success&rdquo; and path</li>
+</ol>
+</blockquote>
+</blockquote>
+<p class="image-center"><img alt="Flowchart" src="{{" title="site.url }}/images/ME145/flowchart.jpg" /><br /></p>
+<p><u>Compute Bug1</u> <br/><br />
+<strong>Input:</strong> Two locations start and goal in W, a list of polygonal obstacles obstacleList, and a length step-size <br/><br />
+<strong>Output:</strong> A sequence, denoted path, of points from start to goal or returns an error message if such a path does not exists.  Successive points are separated by no more than step-size and are computed according to the Bug 1 algorithm.</p>
+<p><cite>Using Matlab</cite></p>
+<p _="%" endhighlight="endhighlight">{% highlight html %}<br />
+{% raw %}<br />
+fucntion [path] = Bug_One(S,G,O,Step)<br />
+%S = starting point, G = goal point, O = obstacles, Step = Step Size<br />
+t = 0;<br />
+%Check if solvable or not<br />
+i = 1;<br />
+l = length (O);<br />
+start = [];<br />
+goal = [];<br />
+while i &lt; l;<br />
+    [st] = inpolygon(S(1,1),S(1,2),(O{1,i}(:,1)),(O{1,i}(:,2)));<br />
+    [go] = inpolygon(G(1,1),G(1,2),(O{1,i}(:,1)),(O{1,i}(:,2)));<br />
+    i = i + 1;<br />
+    start = [start,st];<br />
+    goal = [goal,go];<br />
+end<br />
+if sum(start) &gt; 0;<br />
+    disp(&lsquo;Failure: Start Point in Polygon&rsquo;);<br />
+    path = Nan;<br />
+    return;<br />
+elseif sum(goal) &gt; 0;<br />
+    disp(&lsquo;Failure: Goal Point in Polygon&rsquo;);<br />
+    path = Nan;<br />
+    return;<br />
+else<br />
+    %Implement Bug 1 Algorithm<br />
+    current = S;<br />
+    path = [S];<br />
+    total = [];<br />
+    while norm(G-current) &gt; Step;<br />
+        %Find the Closest polygon to S<br />
+        j = 1;<br />
+        Sclosest = [];<br />
+        while j &lt;= l;<br />
+            P = O{i,j};<br />
+            Q = S;<br />
+            [distance] = d_pp(P,Q);<br />
+            Sclosest = [Sclosest,distance];   %Matrix dist S to Polygons<br />
+            j = j + 1;<br />
+            t = t + 1;<br />
+        end<br />
+        %Find the Closest Polygon toG<br />
+        jj = 1;<br />
+        Gclosest = [];<br />
+        while jj &lt;=l;<br />
+            P = O{1,jj};<br />
+            Q = G;<br />
+            [distance = d_pp(P,Q)];<br />
+            Gclosest = [Gclosest, distance];   %Matrix dist G to polygons<br />
+            jj = jj + 1;<br />
+            t = t + 1;<br />
+        end<br />
+        while sum(Sclosest) &lt; 200;<br />
+            %Getting Phit<br />
+            temp = min(Sclosest);<br />
+            [row,col] = find(Sclosest = temp);<br />
+            spot = col;<br />
+            k = 1;<br />
+            Oalt = [O{1,spot}; O{1,spot}(1,:)];<br />
+            xbox = [];<br />
+            ybox = [];<br />
+            while k &lt;= (length(Oalt));<br />
+                xbox = [xbox,Oalt(k,1)];<br />
+                ybox = [ybox,Oalt(k,2)];<br />
+                k = k + 1;<br />
+                t = t + 1;<br />
+            end<br />
+            [xi,yi] = polyxpoly([current(1,1) G(1,1)],[current(1,2) G(1,2)], xbox, ybox);<br />
+            Phit = [xi(1,1) yi(1,1)];<br />
+            path = [path; Phit];<br />
+            total = [total, norm(Phit-current)];<br />
+            current = Phit;<br />
+            %Getting Pleave<br />
+            k = ((Oalt(1,2)-Oalt(3,2))•(G(1,1)-Oalt(3,1))-(Oalt(1,1)-Oalt(3,1))•(G(1,2)-Oalt(3,2))/((Oalt(1,2)-Oalt(3,2))^2+(Oalt(1,1)-Oalt(3,1))^2);<br />
+            x4 = G(1,1) - k • (Oalt(1,2) - Oalt(3,2));<br />
+            y4 = G(1,2) + k • (Oalt(1,1) - Oalt(3,1));<br />
+            Pleave = [x4,y4];<br />
+            %Going around Polygon<br />
+            r = 1;<br />
+            Z = O{1,spot};<br />
+            Z = sortrows(Z,2);<br />
+            while r &lt;= length(O{1,spot});<br />
+                path = [path,Z(r,:)];<br />
+                total = [total,norm(Z(r,:) - current)];<br />
+                current = Z(r,:);<br />
+                r = r + 1;<br />
+            end<br />
+            path = [path; Phit];<br />
+            total = [total, norm(Phit-current)];<br />
+            current = Phit;<br />
+            r = 1;<br />
+            Z = [Z;Pleave];<br />
+            Z = sortrows(Z,2);<br />
+            while r &lt; length(Z);<br />
+                path = [path;Z(r,:)];<br />
+                total = [total,norm(Z(r,:) - current)];<br />
+                current = Z(r,:);<br />
+                r = r + 1;<br />
+                t = t + 1;<br />
+            end<br />
+            Sclosest(1,spot) = 101;<br />
+            Gclosest(1,spot) = 0;<br />
+            t = t + 1;<br />
+        end<br />
+        total = [total,norm(G - current)];<br />
+        path = [path;G];<br />
+        current = G;<br />
+        total = sum(total);<br />
+        t = t + 1;<br />
+    end<br />
+end<br />
+hold on<br />
+%axis ([0 10 0 10])<br />
+plot(path(:,1),path(:,2))<br />
+end<br />
+{% endraw %}<br /></p>
+<p><u>Testing Bug1 Algorithm:</u> <br/><br />
+start = (0,0) and goal = (5,3) <br/><br />
+step-size = 0.1 obstacleList = {(1,2),(1,0),(3,0)}, {(2,3),(4,1),(5,2)}</p>
+<p class="image-center"><img alt="Bug1Test" src="{{" title="site.url }}/images/ME145/Bug1Test.jpg" /><br /></p>
+<p><strong>Path:</strong> (0,0)-&gt;(1,0.6)-&gt;(1,0)-&gt;(3,0)-&gt;(1,2)-&gt;(1,0.6)-&gt;(1,0)-&gt;(3,0)-&gt;(2.5,0.5)-&gt;(3.5,1.5)-&gt;(4,1)-&gt;(5,2)-&gt;(2,3)-&gt;(3.5,1.5)-&gt;(4,1)-&gt;(5,2)-&gt;(4.7,2.1)-&gt;(5,3) <br/></p>
+<p><strong>Total Path Length:</strong> 23.5071 <br/></p>
+<p><strong>Time:</strong> 21</p>
+<h3 id="bug2prelim-algorithm"><a name="user-content-bug2prelim-algorithm" href="#bug2prelim-algorithm" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Bug2.prelim Algorithm</h3>
+<blockquote>
+<blockquote>
+<ol>
+<li><strong>while</strong> not at goal:</li>
+<li>&nbsp;&nbsp;&nbsp;move towards the goal (along the start-goal-line)</li>
+<li>&nbsp;&nbsp;&nbsp;<strong>if</strong> hit an obstacle:</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;follow the obstacle&rsquo;s boundary (moving either left or right), until you encounter the start-goal-line again and are able to move towards the goal</li>
+</ol>
+</blockquote>
+</blockquote>
+<p>This algorithm may cause the path to be longer than needed. For convenience we repeat the entire algorithm, but the only difference is the addition of the requirement that the leave point be <cite>closer to the goal</cite> than the hit point!</p>
+<h3 id="the-bug2-algorithm"><a name="user-content-the-bug2-algorithm" href="#the-bug2-algorithm" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The Bug2 Algorithm</h3>
+<blockquote>
+<blockquote>
+<ol>
+<li><strong>while</strong> not at goal:</li>
+<li>&nbsp;&nbsp;&nbsp;move towards the goal (along the start-goal-line)</li>
+<li>&nbsp;&nbsp;&nbsp;<strong>if</strong> hit an obstacle:</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;follow the obstacle&rsquo;s boundary (the turn direction is irrelevant), until you encounter the start-goal-line again <cite>closer to the goal</cite> and are able to move towards the goal</li>
+</ol>
+</blockquote>
+</blockquote>
+<p><hr><br />
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--></p>
+<h2 id="2-motion-planning-via-decomposition-and-search"><a name="user-content-2-motion-planning-via-decomposition-and-search" href="#2-motion-planning-via-decomposition-and-search" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. Motion Planning via Decomposition and Search</h2>
+<h3 id="robot-assumptions_1"><a name="user-content-robot-assumptions_1" href="#robot-assumptions_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Robot Assumptions</h3>
+<ul>
+<li>knows the start and goal locations, and </li>
+<li>knows the workspace and obstacles</li>
+</ul>
+<h3 id="world-assumptions"><a name="user-content-world-assumptions" href="#world-assumptions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>World Assumptions</h3>
+<ul>
+<li>the workspace is a bounded polygon</li>
+<li>there are only a finite number of obstacles that are polygons inside the workspace, and</li>
+<li>the start and goal points are inside the workspace and outside all obstacles</li>
+</ul>
+<p>The amount of time it takes for a motion planning algorithm to run, call it&rsquo;s <cite>run-time</cite> rather than the length of the path it produces.  The run-time of an algorithm is given by the number of computer steps required to execute the code.</p>
+<h3 id="decomposition-into-convex-subsets"><a name="user-content-decomposition-into-convex-subsets" href="#decomposition-into-convex-subsets" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Decomposition into convex subsets</h3>
+<p>For complex non-convex environments, we use an algorithm to decompose the free workspace into the union of convex subsets, such as triangles, conves quadrilaterals or trapezoids.  The following nomenclature is convenient: <br/><br />
+(i) the <cite>triangulation</cite> of the polygon is the decomposition of the polygon into a collection of triangles, and <br/><br />
+(ii) the <cite>trapizoidation</cite> of the polygon is the decomposition of the polygon into a collective of trapezoids</p>
+<h3 id="the-sweeping-trapezoidation-algorithm"><a name="user-content-the-sweeping-trapezoidation-algorithm" href="#the-sweeping-trapezoidation-algorithm" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The Sweeping Trapezoidation Algorithm</h3>
+<p><strong>Input:</strong>  a polygon possibly with polygonal holes <br/><br />
+<strong>Output:</strong> a set of disjoint trapezoids, whose union equals the polygon <br/></p>
+<blockquote>
+<blockquote>
+<ol>
+<li>initialize an empty list T of trapezoids <br/></li>
+<li>order all vertices (of the obstacles and of the workspace) horizontally from left to right <br/></li>
+<li><strong>for</strong> each vertex selected in a left-to-right sweeping order: <br/></li>
+<li>&nbsp;&nbsp;&nbsp;extend vertical segments upward and downwards from the vertex until they intersect an obstacle or the workspace boundary <br/></li>
+<li>&nbsp;&nbsp;&nbsp;add to T the new trapezoids, if any, generated by these segment(s)</li>
+</ol>
+</blockquote>
+</blockquote>
+<p>Three key ideas we covered so far: <br/><br />
+(1) convexity leads to very simple paths, (2) if the free workspace is not convex, it is easy to navigate between neighboring convex sets, (3) a complex free workspace can be decomposed into convex subsets via, for example, the sweeping trapezoidation algorithm. <br/><br />
+The next observation is that the sweeping trapezoidation algorithm can easily be modified to additionally provide a list of neighborhood relationships between trapezoids.</p>
+<h3 id="the-roadmap-from-decomposition-algorithm"><a name="user-content-the-roadmap-from-decomposition-algorithm" href="#the-roadmap-from-decomposition-algorithm" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The Roadmap-from-Decomposition Algorithm</h3>
+<p><strong>Input:</strong> the trapezoidation of a polygon (possibly with holes) <br/><br />
+<strong>Output:</strong> a roadmap</p>
+<blockquote>
+<blockquote>
+<ol>
+<li>label the center of each trapezoid with the symbol &#9826; <br/></li>
+<li>label the midpoint of each vertical separating segment with the symbol &diams; <br/></li>
+<li><strong>for</strong> each trapezoid: <br/></li>
+<li>&nbsp;&nbsp;&nbsp;connect the center to all the midpoints in the trapezoid <br/></li>
+<li><strong>return</strong> the roadmap consisting of centers, midpoints and their connections</li>
+</ol>
+</blockquote>
+</blockquote>
+<h3 id="the-planning-via-decomposition-search-algorithm"><a name="user-content-the-planning-via-decomposition-search-algorithm" href="#the-planning-via-decomposition-search-algorithm" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The Planning-via-Decomposition + Search Algorithm</h3>
+<p><strong>Input:</strong> free workspace W<sub>free</sub>, start point p<sub>start</sub> and goal point p<sub>goal</sub> <br/><br />
+<strong>Output:</strong> a path from p<sub>start</sub> to p<sub>goal</sub> if it exists, otherwise a failure notice. Either outcome is obtained in finite time.</p>
+<blockquote>
+<blockquote>
+<ol>
+<li>compute a decomposition of W<sub>free</sub> and the corresponding roadmap <br/></li>
+<li>in the decomposition, find the start trapezoid containing p<sub>start</sub> and the goal trapezoid containing p<sub>goal</sub> <br/></li>
+<li>in the roadmap, search for a path from start trapezoid to goal trapezoid <br/></li>
+<li><strong>if</strong> no path exists from start trapezoid to goal trapezoid <br/></li>
+<li>&nbsp;&nbsp;&nbsp;<strong>return</strong> failure notice <br/></li>
+<li><strong>else</strong> <br/></li>
+<li><strong>return</strong> path by concatenating: <br/><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the segment from p<sub>start</sub> to the center of start trapezoid <br/><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the path from the start trapezoid to goal trapezoid <br/><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the segment from the center of goal trapezoid to p<sub>goal</sub></li>
+</ol>
+</blockquote>
+</blockquote>
+<p>The breadth-first search algorithm, also called BFS algorithm, is one of the simplest graph search strategy and is optimal in the sense that it computes shortest paths.</p>
+<h3 id="the-breadth-first-search-bfs-algorithm"><a name="user-content-the-breadth-first-search-bfs-algorithm" href="#the-breadth-first-search-bfs-algorithm" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The breadth-first search (BFS) algorithm</h3>
+<p><strong>Input:</strong> a graph G, a start node v<sub>start</sub> and goal node v<sub>goal</sub> <br/><br />
+<strong>Output:</strong> a path from v<sub>start</sub> to v<sub>goal</sub> if it exists, otherwise a failure notice</p>
+<blockquote>
+<blockquote>
+<ol>
+<li>create an empty queue Q and insert (Q,v<sub>start</sub>) <br/></li>
+<li><strong>for</strong> each node v in G: <br/></li>
+<li>&nbsp;&nbsp;&nbsp;parent(v) = NONE <br/></li>
+<li>parent(v<sub>start</sub>) = SELF <br/></li>
+<li><strong>while</strong> Q is not empty: <br/></li>
+<li>&nbsp;&nbsp;&nbsp;v = retrieve(Q) <br/></li>
+<li>&nbsp;&nbsp;&nbsp;<strong>for</strong> each node u connected to v by an edge: <br/></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong> parent(u) == NONE: <br/></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set parent(u) = v and insert (Q,u) <br/></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong> u == v<sub>goal</sub>: <br/></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;run extract-path algorithm to compute the path from start to goal <br/></li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>return</strong> success and the path from start to goal <br/></li>
+<li><strong>return</strong> failure notice along with the parent pointers</li>
+</ol>
+</blockquote>
+</blockquote>
+<h3 id="the-extract-path-algorithm"><a name="user-content-the-extract-path-algorithm" href="#the-extract-path-algorithm" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The extract-path algorithm</h3>
+<p><strong>Input:</strong> a goal node v<sub>goal</sub>, and the parent pointers <br/><br />
+<strong>Output:</strong> a path from v<sub>start</sub> to v<sub>goal</sub></p>
+<blockquote>
+<blockquote>
+<ol>
+<li>create an array P = [v<sub>goal</sub>] <br/></li>
+<li>set u = v<sub>goal</sub> <br/></li>
+<li><strong>while</strong> parent(u) &#8800; SELF: <br/></li>
+<li>&nbsp;&nbsp;&nbsp;u = parent(u) <br/></li>
+<li>&nbsp;&nbsp;&nbsp;insert u at the beginning of P <br/></li>
+<li><strong>return</strong> P</li>
+</ol>
+</blockquote>
+</blockquote>
+<p><u>computeBFStree</u> <br/><br />
+<strong>Input:</strong> a graph described by its adjacency table AdjTable, a start node start <br/><br />
+<strong>Output:</strong> a vector of pointers parents describing the BFS tree rooted at start</p>
+<p><cite>Using Matlab</cite></p>
+<p _="%" endhighlight="endhighlight">{% highlight html %}<br />
+{% raw %}<br />
+function [BFStree] = computeBFStree (AdjTable, start)<br />
+% Insert AdjTable as a [:,2] Matrix<br />
+s = AdjTable(:,1);<br />
+t = AdjTable(:,2);<br />
+l = length(AdjTable);<br />
+Q = [];<br />
+Q = [start,Q];<br />
+BFStree = [];<br />
+while isempty(Q) ~= 1<br />
+    pos1 = find(s == Q(1));<br />
+    pos2 = find(t == Q(1));<br />
+    adj1 = t(pos1);<br />
+    adj2 = s(pos2);<br />
+    adj = sort([adj1&rsquo; adj2&rsquo;]);<br />
+    i = length(Q);<br />
+    j = length(BFStree);<br />
+    for n = 1:i<br />
+        del = find(adj == Q(n));<br />
+        adj(del) = [];<br />
+    end<br />
+    for m = 1:j<br />
+        del = find(adj == BFStree(m));<br />
+        adj(del) = [];<br />
+    end<br />
+    Q = [Q adj];<br />
+    if (Q(1) == BFStree) &gt; 0<br />
+        Q(1) = [];<br />
+    else<br />
+        BFStree = [BFStree Q(1)];<br />
+        Q(1) = [];<br />
+    end<br />
+end<br />
+end<br />
+{% endraw %}<br /></p>
+<p><hr><br />
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--></p>
+<h2 id="3-configuration-spaces"><a name="user-content-3-configuration-spaces" href="#3-configuration-spaces" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3. Configuration Spaces</h2>
+<ol>
+<li>describe a robot as a single or multiple interconnected rigid bodies,</li>
+<li>define the configuration space of a robot,</li>
+<li>examine numerous example configuration spaces,</li>
+<li>discuss forward and inverse kinematic maps</li>
+</ol>
+<p>Some simple concepts: <br/><br />
+(i) a <cite>rigid body</cite> is a collection of particles whose position relative to one another is fixed, <br/><br />
+(ii) a robot is composed of a single rigid body or multiple interconnected rigid bodies, <br/><br />
+(iii) robots are 3-dimensional in nature, but we focus on plane problems for now. <br/><br />
+(iv) it is equivalent to specify</p>
+<h3 id="example-systems"><a name="user-content-example-systems" href="#example-systems" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Example Systems:</h3>
+<ul>
+<li><cite>Disk robo</cite>- has the shape of a disk and is characterized by just one parameter, its radius r &gt; 0.  The disk robot does not have an orientation.  Accordingly, the disk robots only motion is translation in the plane: that is, translations in the horizontal and vertical directions.</li>
+<li><cite>Translating polygon robot</cite>- has a polygonal shape.  This robot is assumed to have a fixed orientation, and thus it&rsquo;s only motion is translations in the plane.</li>
+<li><cite>Roto-translation polygon robot</cite>- has an arbitrary polygonal shape, is capable of translating in the horizontal and vertical directions as well as rotating.</li>
+<li><cite>Multi-link or multi-body robot</cite>- composed of multiple rigid bodies (or links) interconnected. Each link of the robot can rotate and translate in the plane, but these motions are constrained by connections to the other links and to the robot base.</li>
+</ul>
+<h3 id="configuration-space"><a name="user-content-configuration-space" href="#configuration-space" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configuration Space</h3>
+<ol>
+<li>A <cite>configuration</cite> of a robot is a minimal set of variables that specifies the position and orientation of each rigid body composing the robot.  The robot configuration is usually denoted bye the letter <cite>q</cite></li>
+<li>The <cite>configuration space</cite> is the set of all possible configurations of a robot. The robot configuration space is usually denoted by the letter <cite>Q</cite>, so that q &isin; Q.</li>
+<li>The number of <cite>degrees of freedom</cite> of a robot is the dimension of the configuration space, i.e., the minimum number of variables required to fully specify the position and orientation of each rigid body belonging to the robot.</li>
+<li>Given that the robot is at configuration q, we know where all points of the robot are.</li>
+</ol>
+<p><hr><br />
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--></p>
+<h2 id="4-free-configuration-spaces-via-sampling-and-collision-detection"><a name="user-content-4-free-configuration-spaces-via-sampling-and-collision-detection" href="#4-free-configuration-spaces-via-sampling-and-collision-detection" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4. Free Configuration Spaces via Sampling and Collision Detection</h2>
+<ol>
+<li>represent obstacles and the free space when the robot is composed of a single or multiple rigid bodies with proper shape, position and orientation</li>
+<li>compute free configuration spaces via sampling and collision detection,</li>
+<li>discuss sampling methods</li>
+<li>discuss collision detection methods</li>
+</ol>
+<h3 id="free-configuration-space-for-the-disk-robot"><a name="user-content-free-configuration-space-for-the-disk-robot" href="#free-configuration-space-for-the-disk-robot" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Free configuration space for the disk robot</h3>
+<p>To compute the <cite>free configuration space</cite> and the <cite>obstacles in configuration space</cite> we reason as follows: a disk with radius r in collision with an obstacle if and only if the disk center is closer to the obstacle than r.  Accordingly, we grow or &ldquo;expand&rdquo; the obstacle and, correspondingly, to &ldquo;shrink&rdquo; the workspace. <br/><br />
+Using this key idea, the <cite>obstacle in configuration space</cite> is the expanded rectangle and the <cite>free configuration space</cite> of the disk robot is described in any of the two completely equivalent forms: <br/></p>
+<p>(i) the set of points of the disk center such that the disk does not intersect the obstacle and is inside the workspace,<br/><br />
+(ii) the shrunk workspace minus the expanded obstacle.</p>
+<h3 id="free-configuration-space-for-the-translating-polygonal-robot"><a name="user-content-free-configuration-space-for-the-translating-polygonal-robot" href="#free-configuration-space-for-the-translating-polygonal-robot" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Free configuration space for the translating polygonal robot</h3>
+<p>There is a simple graphical approach to computing the configuration space obstacle: <br/></p>
+<p>(i) move the robot to touch the obstacle boundary (recall the robot is not allowed to rotate), <br/><br />
+(ii) slide the robot body along the obstacle boundary, maintaining the contact between the robot boundary and the obstacle boundary, <br/><br />
+(iii) while sliding, store the location of the reference point of the robot: the resulting path encloses a convex polygon equal to the configuration space obstacle.</p>
+<h3 id="sampling-methods"><a name="user-content-sampling-methods" href="#sampling-methods" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Sampling Methods</h3>
+<p>A sampling method should have certain properties:</p>
+<ol>
+<li><cite>Uniformity:</cite> the samples should provide a &ldquo;good covering&rdquo; of space. Mathematically, this can be formulated using the notion of dispersion</li>
+<li><cite>Incremental property:</cite> the sequence of samples should provide good coverage at any number n of samples. In other words, it should be possible to increase n continuously and not only in discrete large amounts.</li>
+<li><cite>Lattice structure:</cite> given a sample, the location of nearby samples should be computationally easy to determine.</li>
+</ol>
+<p><strong>Uniform grids</strong> There are two ways of defining uniform grids in the unit cube.  We call them the <cite>center grid</cite> and the <cite>corner grid</cite>. Both grids with <cite>n</cite> points can be defined if n = k<sup>d</sup> for some number <cite>k</cite>.</p>
+<p><strong>Random and pseudo-random sampling</strong> Adopting a random number generator is usually a very simple approach to (uniformly or possibly non-uniformly) sample the cube.  Randomly-sampled points have asymptotically worse dispersion than center grids.</p>
+<p><strong>Halton</strong> sequences are an elegant way of sampling an interval with good uniformity (better than a pseudorandom sequence, though not as good as the optimal center grid) and with the incremental property (which the center grid does not posses).</p>
+<h3 id="the-halton-sequence-algorithm"><a name="user-content-the-halton-sequence-algorithm" href="#the-halton-sequence-algorithm" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The Halton sequence algorithm</h3>
+<p><strong>Input:</strong> length of the sequence N &isin; N and prime number p &isin; N <br/><br />
+<strong>Output:</strong> an array S[1&hellip;N] with the first N samples of the Halton sequence generated by p</p>
+<blockquote>
+<blockquote>
+<ol>
+<li>initialize: S to be an array of N zeros</li>
+<li><strong>for</strong> each i from 1 to N:</li>
+<li>&nbsp;&nbsp;&nbsp;initialize: i<sub>tmp</sub> = i, and f = 1/p</li>
+<li>&nbsp;&nbsp;&nbsp;<strong>while</strong> i<sub>tmp</sub> &gt; 0:</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;compute the quotient q and the remainder r of the division i<sub>tmp</sub>/p</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S(i) = S(i) + f • r</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i<sub>tmp</sub> = q</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f = f/p</li>
+<li><strong>return</strong> S</li>
+</ol>
+</blockquote>
+</blockquote>
+<h3 id="collision-detection-methods"><a name="user-content-collision-detection-methods" href="#collision-detection-methods" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Collision detection methods</h3>
+<p>The next step is to detect whether or not these configurations are in collision with an obstacle or workspace boundary. To do this we require several collision detection methods.</p>
+<h5 id="basic-primitive-1-is-a-point-in-a-convex-polygon"><a name="user-content-basic-primitive-1-is-a-point-in-a-convex-polygon" href="#basic-primitive-1-is-a-point-in-a-convex-polygon" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Basic primitive #1: is a point in a convex polygon?</h5>
+<p>Given a convex polygon with counter-clockwise vertices and a point q, the following conditions are equivalent: <br/></p>
+<p>(i) the point q is in the polygon (possibly on the boundary) <br/><br />
+(ii) for all i &isin; {1,&hellip;,n}, the point q belongs to the halfplane with boundary line passing through the vertices p<sub>i</sub> and p<sub>i+1</sub> and containing the polygon <br/><br />
+(iii) for all i &isin; {i,&hellip;,n}, the dot product between the interior normal to the side p<sub>i</sub>p<sub>i+1</sub> and the segment p<sub>i</sub>q is positive or zero. <br/><br />
+(Here the convention is that p<sub>i+1</sub> = p<sub>1</sub>.  A similar set of results can be given to check that the point is strictly inside the polygon.)</p>
+<h5 id="basic-primitive-2-do-two-segments-intersect"><a name="user-content-basic-primitive-2-do-two-segments-intersect" href="#basic-primitive-2-do-two-segments-intersect" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Basic primitive #2: do two segments intersect?</h5>
+<p>Any two lines in the plane are in one of three exclusive configurations: (1) parallel and coincident, (2) parallel and distinct, or (3) intersecting at a single point. In order for two segments to intersect, the two corresponding lines may be coincident (and the two segments need to intersect at least partly) or may intersect at a point (and the point must belong to the two segments). Now, if the two lines intersect at a point, one still needs to check that the intersection point actually belongs to the segment.</p>
+<h5 id="basic-primitive-3-do-two-convex-polygons-intersect"><a name="user-content-basic-primitive-3-do-two-convex-polygons-intersect" href="#basic-primitive-3-do-two-convex-polygons-intersect" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Basic primitive #3: do two convex polygons intersect?</h5>
+<p>There are five possible cases that one must consider, and each is illustrated below.</p>
+<p class="image-center"><img alt="Polygon Intersection" src="{{" title="site.url }}/images/ME145/polygon_intersection.jpg" /><br /></p>
+<h3 id="the-convex-polygon-intersection-algorithm"><a name="user-content-the-convex-polygon-intersection-algorithm" href="#the-convex-polygon-intersection-algorithm" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The convex-polygon-intersection algorithm</h3>
+<p><strong>Input:</strong> two convex polygons P<sub>1</sub> and P<sub>2</sub> <br/><br />
+<strong>Output:</strong> collision or no collision</p>
+<blockquote>
+<blockquote>
+<ol>
+<li><strong>if</strong> (any vertex of P<sub>1</sub> belongs to P<sub>2</sub>) OR (any vertex of P<sub>2</sub> belongs to P<sub>1</sub>):</li>
+<li>&nbsp;&nbsp;&nbsp;<strong>return</strong> collision</li>
+<li><strong>if</strong> any edge of P<sub>1</sub> intersects any edge of P<sub>2</sub>:</li>
+<li>&nbsp;&nbsp;&nbsp;<strong>return</strong> collision</li>
+<li><strong>return</strong> no collision</li>
+</ol>
+</blockquote>
+</blockquote>
+<p>Given conditions: <br/><br />
+Consider the unit square [0,1]<sup>2</sup> in the plane. Pick an arbitrary integer k and do: <br/></p>
+<ul>
+<li>write formulas for the n = k<sup>2</sup> sample points in the uniform Sukharev center grid;</li>
+<li>write formulas for the n = k<sup>2</sup> sample points in the uniform corner grid;</li>
+<li>write the following programs (representing a grid with n entries in [0,1]<sup>2</sup> by a matrix with n rows and 2 columns):</li>
+</ul>
+<p><u>computeGridSukharev</u> <br/><br />
+<strong>Input:</strong> the number of samples n (assuming n = k<sup>2</sup> for some integer number k) <br/><br />
+<strong>Output:</strong> the uniform Sukharev center grid on [0,1]<sup>2</sup> with [n<sup>1/2</sup>] samples along each axis</p>
+<p><cite>Using Matlab</cite></p>
+<p _="%" endhighlight="endhighlight">{% highlight html %}<br />
+{% raw %}<br />
+function [xpoints, ypoints] = GridSukharev(n)<br />
+k = sqrt(n);<br />
+if k ~= round(k);<br />
+    display &lsquo;Cannot Create Sukharev Grid&rsquo;;<br />
+    return;<br />
+end<br />
+%Change Parameters [0 1]^2 or [0 2*pi]^2<br />
+x = 0:2 • pi/k:2 • pi;<br />
+y = 0:2 • pi/k:2 • pi;<br />
+[xx,yy] = meshgrid(x,y);<br />
+xsize = size(xx);<br />
+ysize = size(yy);<br />
+i = 1;<br />
+xmid = [];<br />
+ymid = [];<br />
+temp = [];<br />
+while i &lt; xsize(1,1);<br />
+    j = 1;<br />
+    while j &lt; xsize(1,2);<br />
+        xmid = [xmid (xx(i,j+1)+xx(i,j))/2];<br />
+        j = j + 1;<br />
+    end<br />
+    temp = [xmid(1:(xsize-1)); temp];<br />
+    i = i + 1;<br />
+end<br />
+xmid = temp;<br />
+i = 1;<br />
+temp = [];<br />
+while i &lt; ysize(1,2);<br />
+    j = 1;<br />
+    while j &lt; ysize(1,1);<br />
+        ymid = [ymid (yy(j+1,i)+yy(j,i))/2];<br />
+        j = j + 1;<br />
+    end<br />
+    temp = [temp;ymid(1:(ysize - 1))];<br />
+    i = i + 1;<br />
+end<br />
+ymid = temp&rsquo;;<br />
+%Uncomment for plots<br />
+%hold on;<br />
+%axis equal;<br />
+%plot(xx,yy,&rsquo;c&rsquo;);<br />
+%plot(xx&rsquo;,yy&rsquo;,&rsquo;c&rsquo;);<br />
+%plot(xmid,ymid,&rsquo;r.&rsquo;)<br />
+xpoints = xmid;<br />
+ypoints = ymid;<br />
+end<br />
+{% endraw %}<br /></p>
+<p class="image-center">Testing GridSukharev(100) <br/><br />
+<img alt="GridSukharev for 100" src="{{" title="site.url }}/images/ME145/GridSukharev100.jpg" /><br /></p>
+<p><u>computeGridRandom</u> <br/><br />
+<strong>Input:</strong> the number of samples n <br/><br />
+<strong>Output:</strong> the random grid on [0,1]<sup>2</sup> with n uniformly-generated samples</p>
+<p><cite>Using Matlab</cite></p>
+<p _="%" endhighlight="endhighlight">{% highlight html %}<br />
+{% raw %}<br />
+function [xpoints,ypoints] = GridRandom(n)<br />
+k = sqrt(n);<br />
+r = randi(6,k,2);<br />
+x = r(:,1);<br />
+y = r(:,2);<br />
+if k != round(k);<br />
+    display &lsquo;Cannot Create Grid&rsquo;;<br />
+    return;<br />
+end<br />
+%Chagne Parameters [0 1]^2 or [0 2*pi]^2<br />
+xx = 0:2 • pi/k:2 • pi;<br />
+yy = 0:2 • pi/k:2 • pi;<br />
+[xxx,yyy] = meshgrid(xx,yy);<br />
+%hold on<br />
+%axis([0 1 0 1])<br />
+%plot(x,y,&rsquo;r.&rsquo;);<br />
+%plot(xxx,yyy,&rsquo;c&rsquo;);<br />
+%plot(xxx&rsquo;,yyy&rsquo;,&rsquo;c&rsquo;);<br />
+xpoints = x;<br />
+ypoints = y;<br />
+end<br />
+{% endraw %}<br /></p>
+<p class="image-center">Testing GridRandom(100) <br/><br />
+<img alt="GridRandom for 100" src="{{" title="site.url }}/images/ME145/GridRandom100.jpg" /><br /></p>
+<p><u>computeGridHalton</u> <br/><br />
+<strong>Input:</strong> the number of samples n; two prime numbers b<sub>1</sub> and b<sub>2</sub> <br/><br />
+<strong>Output:</strong> a Halton sequence of n samples inside [0,1]<sup>2</sup> generated by the prime numbers b<sub>1</sub> and b<sub>2</sub></p>
+<p><cite>Using Matlab</cite></p>
+<p _="%" endhighlight="endhighlight">{% highlight html %}<br />
+{% raw %}<br />
+function [xpoints,ypoints] = GridHalton(n,b1,b2)<br />
+k = sqrt(n);<br />
+if k ~= round(k);<br />
+    display &lsquo;Cannot Create Grid&rsquo;;<br />
+    return;<br />
+end<br />
+S = zeros(1,n);<br />
+for i = 1:n;<br />
+    itemp = i;<br />
+    f = 1/b1;<br />
+    while itemp &gt; 0;<br />
+        n1 = floor(itemp/b1);<br />
+        r = itemp - n1 • b1;<br />
+        S(i) = S(i) + f  r;<br />
+        f = f/b1;<br />
+        itemp = n1;<br />
+    end<br />
+end<br />
+T = zeros(1,n);<br />
+for i = 1:n;<br />
+    itemp = i;<br />
+    f = 1/b2<br />
+    while itemp &gt; 0;<br />
+        n1 = floor(itemp/b2);<br />
+        r = itemp - n1 • b2;<br />
+T(i) = T(i) + f • r;<br />
+        f = f/b2;<br />
+        itemp = n1;<br />
+    end<br />
+end<br />
+xx = 0:1/k:1;<br />
+yy = 0:1/k:1;<br />
+[xxx,yyy] = meshgrid(xx,yy);<br />
+xsize = size(xxx);<br />
+ysize = size(yyy);<br />
+%hold on;<br />
+%axis([0 1 0 1]);<br />
+%plot(S,T,&rsquo;r.&rsquo;);<br />
+%plot(xxx,yyy,&rsquo;c&rsquo;);<br />
+%plot(xxx&rsquo;,yyy&rsquo;,&rsquo;c&rsquo;);<br />
+xpoints = S;<br />
+ypoints = T;<br />
+end<br />
+{% endraw %}<br /></p>
+<p class="image-center">Testing GridHalton(100,2,3)<br />
+<img alt="GridHalton for 100,2,3" src="{{" title="site.url }}/images/ME145/GridHalton100.jpg" /><br /></p>
+<p><u>isPointInConvexPolygon</u> <br/><br />
+<strong>Input:</strong> a point q and a convex polygon P <br/><br />
+<strong>Output:</strong> true(1) or false(0)</p>
+<p><cite>Using Matlab</cite></p>
+<p _="%" endhighlight="endhighlight">{% highlight html %}<br />
+{% raw %}<br />
+function PointInConvexPolygon(q,P)<br />
+%1 = True<br />
+%0 = False<br />
+n = length(P);<br />
+P = [P;P(1,:);P(2,:)];<br />
+S = [];<br />
+Z = [];<br />
+for i = 1:n;<br />
+    v1 = P(i,:);<br />
+    v2 = P(i + 1,:);<br />
+    v3 = P(i + 2,:);<br />
+    m = (v2(2) -  v1(2))/(v2(1) - v1(1));<br />
+    if m == inf || m == -inf<br />
+        if v3(1) &gt; v1(1)<br />
+            v = [1;0];<br />
+        else<br />
+            v = [-1;0];<br />
+        end<br />
+    elseif m ==0<br />
+        if v3(2) &gt; v1(2)<br />
+            v = [0;1];<br />
+        else<br />
+            v = [0;-1];<br />
+        end<br />
+    else<br />
+        b = v1(2) - m • v1(1);<br />
+        mp = -1/m;<br />
+        %Compute Midpoint<br />
+        vm = [v1(1) + v2(1);v1(2) + v2(2)]/2;<br />
+        %Perpendicular Line<br />
+        bp = vm(2) - mp • vm(1);<br />
+        %Compute Inner Versor<br />
+        v4 = [vm(1) + 1;mp • (vm(1) + 1) + bp];<br />
+        %Check if v4 is on the inner side of the polygon<br />
+        if (v3(2) &gt; m • v3(1) + b) &amp;&amp; (v4(2) &lt; m • v4(1) + b)<br />
+            v4 = [vm(1) - 1;mp • (cm(1) - 1) + bp];<br />
+        end<br />
+        v = v4 - vm;<br />
+        v = v/norm(v);<br />
+    end<br />
+    r = q - v1;<br />
+    Q = dot(r,v);<br />
+    Z = [Z Q]<br />
+    v<br />
+end<br />
+if any(Z(:) &lt; 0);<br />
+    0;<br />
+else<br />
+    1;<br />
+end<br />
+end<br />
+{% endraw %}<br /></p>
+<p>The point q should be inputted as a matrix [x,y]. The polygon will be inputted by one matrix but with all the points, such as [x1&nbsp;&nbsp;y1;x2&nbsp;&nbsp;y2;&hellip;;x<sub>n</sub>&nbsp;&nbsp;y<sub>n</sub>]. <br/><br />
+PointInConvexPolygon([2&nbsp;&nbsp;2],[0&nbsp;&nbsp;0;3&nbsp;&nbsp;0;3&nbsp;&nbsp;3;0&nbsp;&nbsp;3]) <br/></p>
+<blockquote>
+<blockquote>
+<p>1 <br/></p>
+</blockquote>
+</blockquote>
+<p>PointInConvexPolygon([2&nbsp;&nbsp;4],[0&nbsp;&nbsp;0;3&nbsp;&nbsp;0;3&nbsp;&nbsp;3;0&nbsp;&nbsp;3]) <br/></p>
+<blockquote>
+<blockquote>
+<p>0</p>
+</blockquote>
+</blockquote>
+<p><u>doTwoSegmentsIntersect</u> <br/><br />
+<strong>Input:</strong> two segmetns described by their respective vertices p<sub>1</sub>,p<sub>2</sub>,and p<sub>3</sub>, p<sub>4</sub> <br/><br />
+<strong>Output:</strong> true(1) or false(0). If true, then return also the intersection point</p>
+<p><cite>Using Matlab</cite></p>
+<p _="%" endraw="endraw">{% raw %}<br />
+function TwoSegmentsIntersect (p1,p2,p3,p4)<br />
+x1 = p1(1);<br />
+y1 = p1(2);<br />
+x2 = p2(1);<br />
+y2 = p2(2);<br />
+x3 = p3(1);<br />
+y3 = p3(2);<br />
+x4 = p4(1);<br />
+y4 = p4(2);<br />
+num = (x4 - x3) • (y1 - y3) - (y4 - y3) • (x1 - x3);<br />
+den = (y4 - y3) • (x2 - x1) - (x4 - x3) • (y2 - y1);<br />
+if num == 0 &amp;&amp; den ==0<br />
+    display &lsquo;0&rsquo;<br />
+elseif den == 0<br />
+    desplay &lsquo;0&rsquo;<br />
+else<br />
+    sa = num/den;<br />
+    sb = (x1 - x3 + sa • (x2 - x1))/(x4 - x3);<br />
+    if sa &lt; 0 | sb &lt; 0<br />
+        display &lsquo;0&rsquo;<br />
+        return<br />
+    elseif sa &gt; 1 | sb &gt; 1<br />
+        display &lsquo;0&rsquo;<br />
+        return<br />
+    end<br />
+    line1 = [x1 y1;x2 y2];<br />
+    line2 = [x3 y3;x4y4];<br />
+    m1 = (line1(2,2) - line1(1,2))/(line1(2,1) - line1(1,1));<br />
+    m2 = (line2(2,2) - line2(1,2))/(line2(2,1) - line2(1,1));<br />
+    b1 = line1(1,2) - m1 • line1(1,1);<br />
+    b2 = line2(1,2) - m2 • line2(1,1);<br />
+    xinter = (b2 - b1)/(m1 0 m2);<br />
+    yinter = m1 • xinter + b1;<br />
+    display &lsquo;1&rsquo;<br />
+    Intercept = sprintf( &lsquo;(%d,%d)&rsquo;,xinter,yinter);<br />
+    display(Intercept)<br />
+end<br />
+end<br /></p>
+<p>The points p1 and p2 will create the first segment while p3 and p4 creawte the second segment.  The order in which you choose doesn&rsquo;t matter; so you can technically input p2&rsquo;s point as p1 and p1&rsquo;s point as p2.  If the output is &lsquo;1&rsquo; then there is an intercept output. However, if the output is &lsquo;0&rsquo; then there is no intersection output displayed. <br/></p>
+<p>TwoSegmentsIntersect([1&nbsp;&nbsp;1],[3&nbsp;&nbsp;3].[1&nbsp;&nbsp;3],[3&nbsp;&nbsp;1]) <br/></p>
+<blockquote>
+<blockquote>
+<p>1 <br/><br />
+Intercept = <br/><br />
+(2,2) <br/></p>
+</blockquote>
+</blockquote>
+<p>TwoSegmentsIntersect([0&nbsp;&nbsp;0],[2&nbsp;&nbsp;3],[4&nbsp;&nbsp;1],[0&nbsp;&nbsp;5]) <br/></p>
+<blockquote>
+<blockquote>
+<p>1 <br/><br />
+Intercept = <br/><br />
+(2,3) <br/></p>
+</blockquote>
+</blockquote>
+<p>TwoSegmentsIntersect([0&nbsp;&nbsp;0],[3&nbsp;&nbsp;0],[3&nbsp;&nbsp;1],[5&nbsp;&nbsp;5]) <br/></p>
+<blockquote>
+<blockquote>
+<p>0 <br/></p>
+</blockquote>
+</blockquote>
+<p><u>doTwoConvexPolygonsIntersect</u> <br/><br />
+<strong>Input:</strong> two convex polygons P<sub>1</sub> and P<sub>2</sub> <br/><br />
+<strong>Output:</strong> true(1) or false(0)</p>
+<p><cite>Using Matlab</cite></p>
+<pre><code>{% raw %}
+function TwoConvexPolygonsIntersect (P1,P2)
+S = [];
+n = length(p1);
+m = length(p2);
+P1 = [P1;P1(1,:)];
+P2 = [P2;P2(1,:)];
+for i = 1:n;
+    for j = 1:m;
+        x1 = P1(i,1);
+        y1 = P1(i,2);
+        x2 = P1(i + 1,1);
+        y2 = P1(i + 1,2);
+        x3 = P2(j,1);
+        y3 = P2(j,2);
+        x4 = P2(j + 1,1);
+        y4 = P2(j + 1,2);
+        num = (x4 - x3) • (y1 - y3) - (y4 - y3) • (x1 - x3);
+        den = (y4 - y3) • (x2 - x1) - (x4 - x3) • (y2 - y1);
+        if num == 0 &amp;&amp; den == 0
+            S = [S 0];
+        elseif den == 0
+            S = [S 0];
+        else
+            sa = num/den;
+            sb = (x1 - x3 + sa • (x2 - x1))/(x4 - x3);
+            if sa &lt; 0 | sb &lt; 0
+                S = [S 0];
+            elseif sa &gt; 1 | sb &gt; 1
+                S = [S 0];
+            else
+                S = [S 1];
+            end
+        end
+    end
+end
+if sum(S) &gt; 0
+    display '1'
+elseif sum(S) == 0
+    display '0'
+end
+end
+{% endraw %}
+</code></pre>
+<p>The polygons are inputted just like usual, [x1&nbsp;&nbsp;y1;x2&nbsp;&nbsp;y2;&hellip;;x<sub>n</sub>&nbsp;&nbsp;y<sub>n</sub>].</p>
+<p>TwoConvexPolygonsIntersect([0&nbsp;&nbsp;0;0&nbsp;&nbsp;2;2&nbsp;&nbsp;2;2&nbsp;&nbsp;0],[1&nbsp;&nbsp;1;1&nbsp;&nbsp;3;3&nbsp;&nbsp;3;3&nbsp;&nbsp;1]) <br/></p>
+<blockquote>
+<blockquote>
+<p>1 <br/></p>
+</blockquote>
+</blockquote>
+<p>TwoConvexPolygonsIntersect([0&nbsp;&nbsp;0;0&nbsp;&nbsp;1;1&nbsp;&nbsp;1;1&nbsp;&nbsp;0],[2&nbsp;&nbsp;0;2&nbsp;&nbsp;1;3&nbsp;&nbsp;1;3&nbsp;&nbsp;0]) <br/></p>
+<blockquote>
+<blockquote>
+<p>0 <br/></p>
+</blockquote>
+</blockquote>
+<p>TwoConvexPolygonsIntersect([0&nbsp;&nbsp;0;1&nbsp;&nbsp;3;1&nbsp;&nbsp;0],[1&nbsp;&nbsp;0;2&nbsp;&nbsp;0;2&nbsp;&nbsp;2]) <br/></p>
+<blockquote>
+<blockquote>
+<p>1 <br/></p>
+</blockquote>
+</blockquote>
+<p><hr><br />
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--></p>
+<h2 id="5-motion-planning-via-sampling"><a name="user-content-5-motion-planning-via-sampling" href="#5-motion-planning-via-sampling" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5. Motion Planning via Sampling</h2>
+<ol>
+<li>general roadmaps and their desirable properties</li>
+<li>complete planners based on exact roadmap computation</li>
+<li>general-purpose planners based on sampling and aproximate roadmaps. For this general-purpose planners we will discuss:<br />
+<em> connection r ules for fixed resolution grid-based roadmaps,<br />
+</em> connection rules for abitrary-resolution methods,<br />
+* comparison between sampling-based approximate and exact planners</li>
+<li>incremental sampling-based approximate and exact planners<br />
+<em> from multi-query to single-query,<br />
+</em> rapidly-exploring random trees (RRT)<br />
+* the application of receding-horizon incremental planners to sensor-based planning.</li>
+<li>Appendix: shortest-path planning via visibility roadmap and shortest path search via Dijkstra&rsquo;s algorithm.</li>
+</ol>
+<h3 id="roadmaps"><a name="user-content-roadmaps" href="#roadmaps" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Roadmaps</h3>
+<p>A roadmap may have the following properties: <br/></p>
+<p>(i) the roadmap is <cite>accessible</cite> if, for each point q<sub>start</sub> in Q<sub>free</sub>, there is an easily computable path from q<sub>start</sub> to some node in the roadmap, <br/><br />
+(ii) similarly, the roadmap is <cite>departable</cite> if, for each point q<sub>goal</sub> in Q<sub>free</sub>, there is an easily computable path from some node in the roadmap to q<sub>goal</sub>, <br/><br />
+(iii) the roadmap is <cite>connected</cite> if, as in graph theory, and two locations of the roadmap are connected by a path in the roadmap, <br/><br />
+(iv) the roadmap is <cite>efficient with factor</cite> &delta; &ge; 1 if, for any two locations in the eroadmap, say <cite>u</cite> and <cite>v</cite>, the path length from <cite>u</cite> to <cite>v</cite> along edges of the roadmap is no longer than &delta; times the length of the shortest path from <cite>u</cite> to <cite>v</cite> in the environment.</p>
+<h3 id="visibility-roadmaps"><a name="user-content-visibility-roadmaps" href="#visibility-roadmaps" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Visibility Roadmaps</h3>
+<p>(i) the nodes V of the v isibility graph are all <cite>convex vertices</cite> of the polygons O<sub>1</sub>, &hellip;, O<sub>n</sub>, <br/><br />
+(ii) the edges E of the visibility graph are all pairs of vertices that are <cite>visibly connected</cite>. That is, given two nodes <cite>u</cite> and <cite>v</cite> in V, we add the edge {u,v} to the edge set E if the straight line segment between <cite>u</cite> and <cite>v</cite> is not in collision with any obstacle <br/><br />
+(iii) the <cite>edge weight</cite> of an edge {u,v} is given by the length of the segment connecting <cite>u</cite> and <cite>v</cite></p>
+<h3 id="the-sampling-based-roadmap-computation-algorithm"><a name="user-content-the-sampling-based-roadmap-computation-algorithm" href="#the-sampling-based-roadmap-computation-algorithm" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The sampling-based roadmap computation algorithm</h3>
+<p><strong>Input:</strong> number of sample points in roadmap N &isin; N. Requires access to a sampling algorithm, collision detection algorithm, and a notion of neighborhood in Q <br/><br />
+<strong>Output:</strong> a roadmap (V,E) for the free configuration space Q<sub>free</sub></p>
+<blockquote>
+<blockquote>
+<ol>
+<li>initialize (V,E) for the free configuration space Q<sub>free</sub> <br/><br />
+<cite>// compute a set of locations V in Q<sub>free</sub>, via sampling &amp; collision detection</cite></li>
+<li><strong>while</strong> number of nobes in V is less than N:</li>
+<li>&nbsp;&nbsp;&nbsp;compute a new sample q in the configuration space Q</li>
+<li>&nbsp;&nbsp;&nbsp;<strong>if</strong> the configuration q is collision-free:</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add q to V <br/><br />
+<cite>// compute a set of paths E via the following connection rule</cite></li>
+<li><strong>for</strong> each sampled location q in V:</li>
+<li>&nbsp;&nbsp;&nbsp;<strong>for</strong> all other sampled locations p in a neighborhood of q:</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong> the path from q to p hits no obstacle:</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add the path q to p to E</li>
+<li><strong>return</strong> (V,E)</li>
+</ol>
+</blockquote>
+</blockquote>
+<h3 id="neighborhood-functions"><a name="user-content-neighborhood-functions" href="#neighborhood-functions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Neighborhood functions</h3>
+<p>There are many possible choices in deciding which sample configuration p to try to connect to q. <br/><br />
+(i) r-radius rule: fix a radius r &gt; 0 and select all locations p within distace r of q. <br/><br />
+(ii) K-closest rule: select the K closest locations p to q. <br/><br />
+(iii) component-wise K-closeest rule: from each connected component of teh current roadmap, select the K closest locationsp to q. <br/></p>
+<p>Roadmap-based methods are structured in general as a two-phase computation process consisting of<br/><br />
+(i) a preprocessing phase - given the free configuration space, compute the roadmap, followed by<br/><br />
+(ii) a query phase - given start and goal locations, connection them to the roadmap and search the resulting graph.</p>
+<p>The roadmap is: <br/><br />
+(i) computed directly as a function of the start location <br/><br />
+(ii) is just a tree, as cycles do not add new paths from the start location</p>
+<h3 id="the-incremental-tree-roadmap-computation-method"><a name="user-content-the-incremental-tree-roadmap-computation-method" href="#the-incremental-tree-roadmap-computation-method" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The Incremental tree-roadmap computation method</h3>
+<p><strong>Input:</strong> start location <cite>q<sub>start</sub></cite>, number of sample points in tree roadmap N &isin; N. Also requires access to a sampling algorithm, collision detection algorithm, and a distance notion on <cite>Q</cite> <br/><br />
+<strong>Output:</strong> a tree roadmap (V,E) for the free configuration space <cite>Q<sub>free</sub></cite> containing <cite>q<sub>start</sub></cite></p>
+<blockquote>
+<blockquote>
+<ol>
+<li>initialize (V,E) to contain the start location <cite>q<sub>start</sub></cite> and no edges</li>
+<li><strong>while</strong> number of nodes in V is less than N:</li>
+<li>&nbsp;&nbsp;&nbsp;select a node <cite>q<sub>expansion</sub></cite> from V for expansion</li>
+<li>&nbsp;&nbsp;&nbsp;choose a collision-free configuration <cite>q<sub>nearby</sub></cite> near <cite>q<sub>expansion</sub></cite></li>
+<li>&nbsp;&nbsp;&nbsp;<strong>if</strong> can find a collision-free path from <cite>q<sub>expansion</sub></cite> to <cite>q<sub>nearby</sub></cite>:</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add <cite>q<sub>nearby</sub></cite> to V</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add collision-free path from <cite>q<sub>expansion</sub></cite> to <cite>q<sub>nearby</sub></cite> to E</li>
+<li><strong>return</strong> (V,E)</li>
+</ol>
+</blockquote>
+</blockquote>
+<p>A graph is <cite>weighted</cite> if a positive number, called the <cite>weight</cite>, is associated to each edge. In motion planning problems, the edge weight might be a distance between locations, a time required to travel or a cost associated with the travel.  The <cite>weight of a path</cite> is the sum of the weights of each edge in the path. <br/></p>
+<p>The <cite>minimum-weight path between two nodes</cite>, also called the <cite>shortest path in a weight graph</cite>, is a path of minimum weight between the two nodes. <br/></p>
+<p><cite>Informal description:</cite> For each node, maintain a weighted distance estimate from the source, denoted by dist. Incrementally construct a tree that contains only shortest paths from the source. Starting with an empty tree, at each round, add to the tree (1) the node outside the tree with smallest dist, and (2) the edge corresponding to the shortest path to this node. The estimates dist are updated as follows: when a node is added to the tree, the estimates of the neighboring outside nodes are updated (see details below). The tree is stored using parent pointers that for each node u record the node immediately before u on the shortest path from the source to u.</p>
+<h3 id="dijkstras-algorithm"><a name="user-content-dijkstras-algorithm" href="#dijkstras-algorithm" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Dijkstra&rsquo;s Algorithm</h3>
+<p><strong>Input:</strong> a weighted graph <cite>G</cite> and a start node <cite>n<sub>start</sub></cite> <br/><br />
+<strong>Output:</strong> the parent pointer and dist values for each node in the graph <cite>G</cite> <br/><br />
+<cite>//Initialization of distance and parent pointer for each node</cite></p>
+<blockquote>
+<blockquote>
+<ol>
+<li><strong>for</strong> each node <cite>v</cite> in <cite>G</cite>:</li>
+<li>&nbsp;&nbsp;&nbsp;<strong>dist</strong>(<cite>v</cite>) = +&#x221e;</li>
+<li>&nbsp;&nbsp;&nbsp;<strong>parent</strong>(<cite>v</cite>) = NONE</li>
+<li><strong>dist</strong>(<cite>v<sub>start</sub></cite>) = 0</li>
+<li><cit>Q</cite> = set of all nodes in <cite>G</cite> <br/><br />
+<cite>//Main loop to grow the tree and update distance estimates</cite></li>
+<li><strong>while</strong> <cite>Q</cite> is not empty:</li>
+<li>&nbsp;&nbsp;&nbsp;find node <cite>v</cite> in <cite>Q</cite> with smallest <strong>dist</strong>(<cite>v</cite>)</li>
+<li>&nbsp;&nbsp;&nbsp;remove <cite>v</cite> from <cite>Q</cite></li>
+<li><strong>for</strong> each node <cite>w</cite> connected to <cite>v</cite> by an edge:</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>if dist</strong>(<cite>w</cite>) &gt; <strong>dist</strong>(<cite>v</cite>)+weight(<cite>v</cite>,<cite>w</cite>):</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>dist</strong>(<cite>w</cite>) = <strong>dist</strong>(<cite>v</cite>) = weight(<cite>v</cite>,<cite>w</cite>)</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>parent</strong>(<cite>w</cite>) = <cite>v</cite></li>
+<li><strong>return parent</strong> pointers and <strong>dist</strong> values for all nodes <cite>v</cite></li>
+</ol>
+</blockquote>
+</blockquote>
+<p><u>plotEnvironment</u> <br/><br />
+<strong>Input:</strong> L<sub>1</sub>,L<sub>2</sub>,W,&alpha;,&beta;,(x<sub>o</sub>,y<sub>o</sub>),r ,<br/><br />
+<strong>Output:</strong> the function plots the two-lik manipulator defind by L<sub>1</sub>,L<sub>2</sub>,W,&alpha;,&beta;, and the obstacle defined by (x<sub>o</sub>,y<sub>o</sub>)</p>
+<p><cite>Using Matlab</cite></p>
+<pre><code>{% raw %}
+function plot_env(L1,L2,W,alpha,beta,O,r)
+%Change angles to degrees
+alpha = alpha • 180/pi;
+beta = beta • 180/pi;
+charlie = alpha + beta;
+A = W/2 • sind(alpha);
+B = W/2 • cosd(alpha);
+C = W/2 • sind(charlie);
+D = W/2 • cosd(charlie);
+
+%Rectangles
+rx1 = [-A -A+L1•cosd(alpha) A+L1•cosd(alpha) A -A];
+ry1 = [B B+L1•sind(alpha) -B+L1•sind(alpha) -B B];
+rx2 = [-C+L1•cosd(alpha) -C+L1•cosd(alpha)+L2•cosd(charlie) C+L1•cosd(alpha)+L2•cosd(charlie) C+L1•cosd(alpha) -C+L1•cosd(alpha)];
+ry2 = [D+L1•sind(alpha) D+L1•sind(alpha)+L2•sind(charlie) -D+L1•sind(alpha)+L2•sind(charlie) -D+L1•sind(alpha) D+L1•sind(alpha)];
+
+%Plot Points
+hold on;
+plot(0,0,'c.')
+plot(L1•cosd(alpha),L1•sind(alpha),'c.')
+plot(L1•cosd(alpha)+L2•cosd(charlie),L1•sind(alpha)+L2•sind(charlie),'c.')
+plot(O(1,1),O(1,2),'c.')
+
+%Plot Rectangles
+plot(rx1,ry1,'b');
+plot(rx2,ry2,'r');
+
+%Plot semi-circles
+th1 = linspace(alpha + 270,alpha + 90,100);
+th2 = linspace(alpha - 90,alpha + 90,100);
+th3 = linspace(charlie + 270,charlie + 90,100);
+th4 = linspace(charlie - 90,charlie + 90,100);
+thc = linspace(0,360,100);
+R = W/2;
+x1 = R • cosd(th1) + 0;
+y1 = R • sind(th1) + 0;
+x2 = R • cosd(th2) + L1 • cosd(alpha);
+y2 = R • sind(th2) + L1 • sind(alpha);
+x3 = R • cosd(th3) + L1 • cosd(alpha);
+y3 = R • sind(th3) + L1 • sind(alpha);
+x4 = R • cosd(th4) + L1 • cosd(alpha) + L2 • cosd(charlie);
+y4 = R • sind(th4) + L1 • sind(alpha) + L2 • sind(charlie);
+xc = r • cosd(thc) + O(1,1);
+yc = r • sind(thc) + O(1,2);
+plot(x1,y1,'c');
+plot(x2,y2,'c');
+plot(x3,y3,'g');
+plot(x4,y4,'g');
+plot(xc,yc,'b');
+axis equal;
+grid on;
+end
+{% endraw %}
+</code></pre>
+<p><u>checkCollisionTwoLink</u> <br/><br />
+<strong>Input:</strong> L<sub>1</sub>,L<sub>2</sub>,Q,&alpha;,&beta;,(x<sub>o</sub>,y<sub>o</sub>),r <br/><br />
+<strong>Output:</strong> the function returns 1 if the two-link manipulator defind by L<sub>1</sub>,L<sub>2</sub>,W,&alpha;,&beta; collides with the obstacle defined by (x<sub>o</sub>,y<sub>o</sub>) and r. The function returns 0 otherwise.</p>
+<p><cite>Using Matlab</cite></p>
+<pre><code>{% raw %}
+function [ans, n] = check_collision(L1, L2, W, alpha, beta, O, r)
+%Change angles to degrees
+alpha = alpha • 180 / pi;
+beta = beta • 180 / pi;
+charlie = alpha + beta;
+
+%Create Equations
+W = W + 2 • r;
+A = W/2 • sind(alpha);
+B = W/2 • cosd(alpha);
+C = W/2 • sind(charlie);
+D = W/2 • cosd(charlie);
+
+%Rectangles
+rx1 = [-A -A+L1•cosd(alpha) A+L1•cosd(alpha) A -A];
+ry1 = [B B+L1•sind(alpha) -B+L1•sind(alpha) -B B];
+rx2 = [-C+L1•cosd(alpha) -C+L1•cosd(alpha)+L2•cosd(charlie) C+L1•cosd(alpha)+L2•cosd(charlie) C+L1•cosd(alpha) -C+L1•cosd(alpha)];
+ry2 = [D+L1•sind(alpha) D+L1•sind(alpha)+L2•sind(charlie) -D+L1•sind(alpha)+L2•sind(charlie) -D+L1•sind(alpha) D+L1•sind(alpha)];
+
+%Plot Points
+hold on;
+plot(0,0,'c.');
+plot(L1•cosd(alpha),L1•sind(alpha),'c.');
+plot(L1•cosd(alpha)+L2•cosd(charlie),L1•sind(alpha)+L2•sind(charlie),'c.');
+plot(O(1,1),O(1,2),'c.','Markersize',20)
+
+%Plot Rectangles
+plot(rx1,ry1,'b');
+plot(rx2,ry2,'r');
+
+%Plot semi-circles
+th1 = linspace(alpha + 270,alpha + 90,100);
+th2 = linspace(alpha - 90,alpha + 90,100);
+th3 = linspace(charlie + 270,charlie + 90,100);
+th4 = linspace(charlie - 90,charlie + 90,100);
+R = W/2;
+x1 = R • cosd(th1) + 0;
+y1 = R • sind(th1) + 0;
+x2 = R • cosd(th2) + L1 • cosd(alpha);
+y2 = R • sind(th2) + L1 • sind(alpha);
+x3 = R • cosd(th3) + L1 • cosd(alpha);
+y3 = R • sind(th3) + L1 • sind(alpha);
+x4 = R • cosd(th4) + L1 • cosd(alpha) + L2 • cosd(charlie);
+y4 = R • sind(th4) + L1 • sind(alpha) + L2 • sind(charlie);
+
+%Turn into Matrix
+rx1(end) = [];
+ry1(end) = [];
+rx2(end) = [];
+ry2(end) = [];
+
+%Plot Semi-Circles
+plot(x1,y1,'c');
+plot(x2,y2,'c');
+plot(x3,y3,'g');
+plot(x4,y4,'g');
+axis square;
+grid on
+
+%Check if point is in polygons
+if inpolygon(O(1,1), O(1,2), rx1, ry1)
+    ans = 1;
+    n = 1;
+    return;
+elseif inpolygon(O(1,1), O(1,2), rx2, ry2)
+    ans = 1;
+    n = 2;
+    return;
+elseif inpolygon(O(1,1), O(1,2), x1, y1)
+    ans = 1;
+    n = 1;
+    return;
+elseif inpolygon(O(1,1), O(1,2), x2, y2)
+    ans = 1;
+    n = 1;
+    return;
+elseif inpolygon(O(1,1), O(1,2), x3, y3)
+    ans = 1;
+    n = 2;
+    return;
+elseif inpolygon(O(1,1), O(1,2), x4, y4)
+    ans = 1;
+    n = 2;
+    return;
+else
+    ans = 0;
+    n = 0;
+    return;
+end
+end
+{% endraw %}
+</code></pre>
+<p><u>plotSampleConfigurationSpaceTwoLink</u> <br/><br />
+<strong>Input:</strong> L<sub>1</sub>,L<sub>2</sub>,W,(x<sub>o</sub>,y<sub>o</sub>),r,sampling_method,n <br/><br />
+<strong>Output:</strong> the function plots the sampled free configuration space of the two-link manipulator defined by L<sub>1</sub>,<sub>L2</sub>,W. In particular, the function (i) determines n sample points in the configuration space according to the sampling method specified in the parameter sampling_method, (ii) draws a black dot at the sample (&alpha;,&beta;) if the first link collides with the obstacle, a red dot at the sample (&alpha;,&beta;) if the second link collides with the obstacle, and a blue dot otherwise. Use the sampling methods developed.</p>
+<p><cite>Using Matlab</cite></p>
+<pre><code>{% raw %}
+% Sample: 'Sukharev', 'Random', 'Halton'
+function plot_config(L1, L2, W, O, r, sample, n)
+%Check if Sample is available
+if strcmp(sample, 'Sukharev') == 0 &amp;&amp; strcmp(sample, 'Random') == 0 &amp;&amp; strcmp(sample, 'Halton') == 0;
+    display 'Unknown sample'
+    return;
+end
+
+%Check Sample Size is Correct
+k = sqrt(n);
+if k ~= round(k);
+    display 'Cannont Create Grid';
+    return;
+end
+temp = [];
+
+%Sukharev Sample
+if strcmp(sample,'Sukharev') == 1
+    [xpoints,ypoints] = GridSukharev(n);
+    for i = 1:k
+        for j = 1:k
+            [~, n] = check_collision(L1,L2,W,xpoints(i,j),ypoints(i,j),O,r);
+            temp(i,j) = n;
+        end
+    end
+    x = 0:2 • pi/k:2 • pi;
+    y = 0:2 • pi/k:2 • pi;
+    [xx,yy] = meshgrid(x,y);
+    close all;
+    hold on;
+    plot(xx,yy,'c');
+    plot(xx',yy','c');
+    axis equal;
+    for i = 1:k
+        for j = 1:k
+            if temp(i,j) == 0
+                plot(xpoints(i,j),ypoints(i,j),'b.','MarkerSize',20)
+            elseif temp(i,j) == 1
+                plot(xpoints(i,j),ypoints(i,j),'k.','MarkerSize',20)
+            elseif temp(i,j) == 2
+                plot(xpoints(i,j),ypoints(i,j),'r.','MarkerSize',20)
+            end
+        end
+    end
+
+%Random Sample
+elseif strcmp(sample,'Random') == 1
+    [xpoints,ypoints] = GridRandom(n);
+    for i = 1:k
+        [~, n] = check_collision(L1,L2,W,xpoints(i,1),ypoints(i,1),O,r);
+        temp(i,1) = n;
+    end
+    x = 0:2 • pi/k:2 • pi;
+    y = 0:2 • pi/k:2 • pi;
+    [xx,yy] = meshgrid(x,y);
+    close all;
+    hold on;
+    plot(xx,yy,'c');
+    plot(xx',yy','c');
+    axis equal;
+    for i = 1:k
+        if temp(i,1) == 0
+            plot(xpoints(i,1),ypoints(i,1),'b.','MarkerSize',10)
+        elseif temp(i,1) == 1
+            plot(xpoints(i,1),ypoints(i,1),'k.','MarkerSize',10)
+        elseif temp(i,1) == 2
+            plot(xpoints(i,1),ypoints(i,1),'r.','MarkerSize',10)
+        end
+    end
+
+%Halton Sample
+elseif strcmp(sample,'Halton') == 1
+    [xpoints,ypoints] = GridHalton(n,2,3);
+    for i = 1:k
+        [~, n] = check_collision(L1,L2,W,xpoints(1,i),ypoints(1,i),O,r);
+        temp(1,i) = n
+    end
+    x = 0:2 • pi/k:2 • pi;
+    y = 0:2 • pi/k:2 • pi;
+    [xx,yy] = meshgrid(x,y);
+    close all;
+    hold on;
+    plot(xx,yy,'c');
+    plot(xx',yy','c');
+    axis equal;
+    for i = 1:k
+        if temp(1,i) == 0
+            plot(xpoints(1,i),ypoints(1,i),'b.','MarkerSize',10)
+        elseif temp(1,i) == 1
+            plot(xpoints(1,i),ypoints(1,i),'k.','MarkerSize',10)
+        elseif temp(1,i) == 2
+            plot(xpoints(1,i),ypoints(1,i),'r.','MarkerSize',10)
+        end
+    end
+end
+{% endraw %}
+</code></pre></article></body></html>
