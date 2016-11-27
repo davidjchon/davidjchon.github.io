@@ -8,8 +8,8 @@ image:
   background: Pattern/grey_wash_wall.png
 ---
 
-<figure class="half center">
-	<img src="http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_c.jpg" alt="">
+<figure class="center">
+	<img src="" alt="">
 </figure>
 
 Welcome! 환영합니다! ようこそ!<br/>
