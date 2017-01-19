@@ -32,14 +32,14 @@ menu:
   #       url: '/intro/sample-post/'
   - title: 'Download'
     url: '/David Chon Resume.pdf'
-  #- title: 'Resume'
-  #  url: '/resume.html'
+  - title: 'Online Resume'
+    url: '/resume.html'
 
 # Owner/author information
 owner:
   name:           David Chon
   site:           http://davidjchon.github.io
-  avatar:         images/avatar.jpg
+  avatar:         About_Me.jpg
   bio:            "I am a Mechanical Engineer interested in Design/Manufacturing and Materials/Structures.  I studied at UCR and graduated with a B.S. in Mechanical Engineering. Although I graduated as a Mechanical Engineer, I have some knowledge on many coding languages.  I hope to build strong relationships with those I encounter.  With my skills, I am confident that I can be a valuable asset to those work"
   email:          dchond@gmail.com
   # Twitter nick for use in Twitter cards and follow button.
