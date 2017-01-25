@@ -9,7 +9,7 @@ image:
 ---
 
 <figure class="center">
-	<img src="/About_Me.png" alt="Avatar">
+	<img src="/About_Me.png" alt="Avatar.png">
 </figure>
 
 Welcome! 환영합니다! ようこそ!<br/>
