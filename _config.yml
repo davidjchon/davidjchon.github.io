@@ -30,10 +30,17 @@ menu:
   #       url: '/intro/code-highlighting-post/'
   #     - title: 'Sample Post'
   #       url: '/intro/sample-post/'
-  - title: 'Download'
-    url: '/David Chon Resume.pdf'
-  - title: 'Online Resume'
-    url: '/resume.html'
+  # - title: 'Download'
+  #   url: '/David Chon Resume.pdf'
+  # - title: 'Online Resume'
+  #   url: '/resume.html'
+  - title: 'Resume'
+    url: '#'
+      submenu:
+        - title: 'PDF Download'
+          url: '/David Chon Resume.pdf'
+        - title: 'Online Resume'
+          url: /resume.html'
 
 # Owner/author information
 owner:
