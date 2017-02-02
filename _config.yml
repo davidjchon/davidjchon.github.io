@@ -20,6 +20,8 @@ menu:
     url: '/'
   #- title: 'Tags'
   #  url: '/tags'
+  #- title: 'About Me'
+  #  url: '/'
   - title: 'Categories'
     url: '/categories'
     type: 'categories'
@@ -44,7 +46,7 @@ menu:
 
 # Owner/author information
 owner:
-  name:           David Chon
+  name:           David Chon, E.I.T.
   site:           http://davidjchon.github.io
   avatar:         Avatar.png
   bio:            "I am a Mechanical Engineer interested in Design/Manufacturing and Materials/Structures.  I studied at UCR and graduated with a B.S. in Mechanical Engineering. Although I graduated as a Mechanical Engineer, I have some knowledge on many coding languages.  I hope to build strong relationships with those I encounter.  With my skills, I am confident that I can be a valuable asset to those work"
