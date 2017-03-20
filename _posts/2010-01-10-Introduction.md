@@ -9,7 +9,7 @@ image:
 ---
 
 <figure class="center">
-	<img style="border-radius: 50%" max-width: "400px" max-height: "400px" src="/Avatar.png" alt="Avatar">
+	<img style="border-radius: 50%" src="/Avatar.png" alt="Avatar">
 </figure>
 
 Welcome! 환영합니다! ようこそ!<br/>
