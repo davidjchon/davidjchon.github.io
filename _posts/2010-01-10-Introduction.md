@@ -8,7 +8,7 @@ image:
   background: Pattern/grey_wash_wall.png
 ---
 
-<div style="display: inline-block, border-radius: 50%">
+<div style="background: pink, display: inline-block, border-radius: 50%">
 <figure class="center">
 	<img src="/Avatar.png" alt="Avatar">
 </figure>
