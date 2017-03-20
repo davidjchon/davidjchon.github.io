@@ -8,11 +8,9 @@ image:
   background: Pattern/grey_wash_wall.png
 ---
 
-<div style="background: pink, display: inline-block, border-radius: 50%">
 <figure class="center">
-	<img src="/Avatar.png" alt="Avatar">
+	<img style="border-radius: 50%" src="/Avatar.png" alt="Avatar">
 </figure>
-</div>
 
 Welcome! 환영합니다! ようこそ!<br/>
 My name is **David J. Chon** and this is my business blog.
