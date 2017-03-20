@@ -8,7 +8,7 @@ image:
   background: Pattern/grey_wash_wall.png
 ---
 
-<figure class="center">
+<figure class="center" style="border-radius: 50%">
 	<img src="/Avatar.png" alt="Avatar">
 </figure>
 
